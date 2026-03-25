@@ -63,11 +63,23 @@
     .nav-logo {
       display: flex;
       align-items: center;
-      background: #fff;
-      padding: 6px 12px;
-      border-radius: 8px;
+      gap: 8px;
+      text-decoration: none;
+      color: #fff;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 800;
+      font-size: 1.05rem;
+      letter-spacing: -0.01em;
+      opacity: 0.92;
+      transition: opacity 0.2s;
     }
-    .nav-logo img { height: 30px; display: block; }
+    .nav-logo:hover { opacity: 1; }
+    .nav-logo-dot {
+      width: 8px; height: 8px;
+      background: #2AB27B;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
     .nav-back {
       display: flex;
       align-items: center;
@@ -434,10 +446,11 @@
     /* Floating notification badges */
     .mock-notifications {
       position: absolute;
-      top: -16px; right: -16px;
+      bottom: 14px; right: 14px;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 7px;
+      z-index: 10;
     }
     .mock-notif {
       background: rgba(13,27,42,0.95);
@@ -910,11 +923,18 @@
       gap: 12px;
     }
     .footer-logo {
-      background: rgba(255,255,255,0.1);
-      padding: 5px 10px;
-      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      text-decoration: none;
+      color: rgba(255,255,255,0.5);
+      font-family: 'Raleway', sans-serif;
+      font-weight: 800;
+      font-size: 0.92rem;
+      transition: color 0.2s;
     }
-    .footer-logo img { height: 24px; display: block; }
+    .footer-logo:hover { color: rgba(255,255,255,0.8); }
+    .footer-logo-dot { width: 7px; height: 7px; background: #2AB27B; border-radius: 50%; flex-shrink: 0; }
     .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
     .footer-links a { font-size: 0.8rem; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
     .footer-links a:hover { color: rgba(255,255,255,0.7); }
@@ -995,7 +1015,8 @@
 <!-- Navbar -->
 <nav class="navbar" id="navbar">
   <a href="https://www.justgreatlawyers.com" class="nav-logo">
-    <img src="https://ik.imagekit.io/8nsf9m22suv/images/JustGreatLawyers_2.png" alt="JustGreatLawyers" />
+    <div class="nav-logo-dot"></div>
+    JustGreatLawyers
   </a>
   <a href="https://www.justgreatlawyers.com" class="nav-back">
     <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
@@ -1482,7 +1503,8 @@
 <!-- Footer -->
 <footer class="footer">
   <a href="https://www.justgreatlawyers.com" class="footer-logo">
-    <img src="https://ik.imagekit.io/8nsf9m22suv/images/JustGreatLawyers_2.png" alt="JustGreatLawyers" />
+    <div class="footer-logo-dot"></div>
+    JustGreatLawyers
   </a>
   <div class="footer-links">
     <a href="https://www.justgreatlawyers.com">Home</a>
