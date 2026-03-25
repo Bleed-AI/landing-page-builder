@@ -1,0 +1,12 @@
+{
+  "name": "landing-page-builder",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "B2B landing page builder for cold email campaigns",
+  "scripts": {
+    "serve": "node scripts/serve.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  }
+}
