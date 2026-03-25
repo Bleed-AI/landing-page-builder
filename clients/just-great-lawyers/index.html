@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Get More Clients. Zero Bidding Wars. | JustGreatLawyers.com</title>
-  <meta name="description" content="Join 16,000+ monthly searchers already looking for attorneys on JustGreatLawyers.com. Flat annual fee. No auctions. No per-lead charges. Claim your verified listing today." />
-  <meta property="og:title" content="Get More Clients. Zero Bidding Wars. | JustGreatLawyers.com" />
-  <meta property="og:description" content="The attorney directory where paid members actually stand out. DA 66. 16K monthly users. From $25/month." />
+  <title>Get Found by Clients Who Need You Now | JustGreatLawyers.com</title>
+  <meta name="description" content="16,000 clients search for attorneys on JustGreatLawyers.com every month. Claim your verified listing. Flat annual fee. No bidding wars." />
+  <meta property="og:title" content="Get Found by Clients Who Need You Now | JustGreatLawyers.com" />
+  <meta property="og:description" content="DA 66 attorney directory. 16K monthly users. From $25/month flat. No auctions, no per-lead fees." />
   <meta property="og:image" content="https://ik.imagekit.io/8nsf9m22suv/images/JustGreatLawyers_2.png" />
 
   <!-- Fonts -->
@@ -14,997 +14,982 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
 
-  <!-- AOS (Animate on Scroll) -->
+  <!-- AOS only (reliable scroll animations) -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
-  <!-- GSAP -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
   <style>
-    /* ─── RESET & BASE ─── */
+    /* ─── RESET ─── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-size: 16px; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Lato', Arial, sans-serif;
       color: #2d2d2d;
-      background: #ffffff;
+      background: #fff;
       overflow-x: hidden;
       line-height: 1.6;
     }
 
-    /* ─── CSS VARIABLES ─── */
     :root {
       --blue: #067FAE;
       --blue-dark: #055e82;
-      --blue-light: #0896cc;
       --green: #2AB27B;
       --green-dark: #1f8a5e;
       --dark: #0d1b2a;
-      --dark-mid: #1a2d3f;
       --gray: #6b7280;
       --light: #f8fafc;
-      --white: #ffffff;
-      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
-      --shadow-md: 0 4px 20px rgba(0,0,0,0.10);
-      --shadow-lg: 0 12px 40px rgba(0,0,0,0.14);
-      --shadow-blue: 0 8px 32px rgba(6,127,174,0.25);
-      --shadow-green: 0 8px 32px rgba(42,178,123,0.3);
       --radius: 12px;
       --radius-lg: 20px;
     }
 
-    /* ─── TYPOGRAPHY ─── */
     h1, h2, h3, h4 { font-family: 'Raleway', sans-serif; line-height: 1.2; }
-
-    /* ─── SMOOTH CURSOR GLOW ─── */
-    .cursor-glow {
-      position: fixed;
-      width: 400px;
-      height: 400px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(6,127,174,0.06) 0%, transparent 70%);
-      pointer-events: none;
-      z-index: 0;
-      transform: translate(-50%, -50%);
-      transition: opacity 0.3s;
-    }
 
     /* ─── NAVBAR ─── */
     .navbar {
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 1000;
-      padding: 14px 24px;
+      padding: 14px 40px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       transition: all 0.4s ease;
     }
     .navbar.scrolled {
-      background: rgba(13, 27, 42, 0.95);
+      background: rgba(13,27,42,0.97);
       backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
       box-shadow: 0 2px 20px rgba(0,0,0,0.3);
-      padding: 10px 24px;
+      padding: 10px 40px;
     }
-    .nav-logo img {
-      height: 36px;
-      filter: brightness(0) invert(1);
-      transition: transform 0.3s;
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      padding: 6px 12px;
+      border-radius: 8px;
     }
-    .nav-logo img:hover { transform: scale(1.03); }
+    .nav-logo img { height: 30px; display: block; }
     .nav-back {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       color: rgba(255,255,255,0.8);
       text-decoration: none;
-      font-family: 'Lato', sans-serif;
       font-size: 0.88rem;
-      letter-spacing: 0.02em;
+      font-family: 'Lato', sans-serif;
       transition: color 0.2s;
     }
     .nav-back:hover { color: #fff; }
-    .nav-back svg { width: 16px; height: 16px; }
 
     /* ─── HERO ─── */
     .hero {
-      position: relative;
       min-height: 100vh;
+      background: linear-gradient(135deg, #0a1628 0%, #0d2340 45%, #0a3355 100%);
       display: flex;
       align-items: center;
-      background: linear-gradient(135deg, #0d1b2a 0%, #0f2c45 40%, #083d5c 100%);
+      position: relative;
       overflow: hidden;
-      padding: 120px 24px 80px;
+      padding: 100px 40px 60px;
     }
-    .hero-bg-mesh {
-      position: absolute;
-      inset: 0;
-      opacity: 0.4;
-      background-image:
-        radial-gradient(ellipse 80% 60% at 20% 50%, rgba(6,127,174,0.35) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 80% at 80% 20%, rgba(42,178,123,0.2) 0%, transparent 60%);
-    }
-    .hero-grid-lines {
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(6,127,174,0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(6,127,174,0.06) 1px, transparent 1px);
-      background-size: 60px 60px;
-    }
-    .hero-orb {
+
+    /* Animated background blobs */
+    .hero-blob {
       position: absolute;
       border-radius: 50%;
-      filter: blur(80px);
+      filter: blur(90px);
       pointer-events: none;
+      animation: blobFloat 12s ease-in-out infinite;
     }
-    .hero-orb-1 {
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(6,127,174,0.25) 0%, transparent 70%);
-      top: -200px; left: -100px;
-      animation: orbFloat 8s ease-in-out infinite;
+    .hero-blob-1 {
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(6,127,174,0.22) 0%, transparent 70%);
+      top: -200px; left: -150px;
     }
-    .hero-orb-2 {
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(42,178,123,0.2) 0%, transparent 70%);
-      bottom: -100px; right: 10%;
-      animation: orbFloat 10s ease-in-out infinite reverse;
+    .hero-blob-2 {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(42,178,123,0.18) 0%, transparent 70%);
+      bottom: -100px; right: 5%;
+      animation-delay: -5s;
+      animation-duration: 15s;
     }
-    @keyframes orbFloat {
-      0%, 100% { transform: translateY(0) scale(1); }
-      50% { transform: translateY(-30px) scale(1.05); }
+    .hero-blob-3 {
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(6,127,174,0.15) 0%, transparent 70%);
+      top: 40%; right: 35%;
+      animation-delay: -8s;
+      animation-duration: 18s;
     }
-    .hero-container {
+    @keyframes blobFloat {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(20px, -30px) scale(1.05); }
+      66% { transform: translate(-15px, 20px) scale(0.95); }
+    }
+
+    /* Grid overlay */
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(6,127,174,0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(6,127,174,0.07) 1px, transparent 1px);
+      background-size: 70px 70px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+    }
+
+    .hero-inner {
       position: relative;
       z-index: 2;
-      max-width: 900px;
+      max-width: 1200px;
       margin: 0 auto;
-      text-align: center;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
     }
+
+    /* Left column */
+    .hero-text {}
     .hero-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(42,178,123,0.15);
-      border: 1px solid rgba(42,178,123,0.35);
+      background: rgba(42,178,123,0.12);
+      border: 1px solid rgba(42,178,123,0.3);
       color: #2AB27B;
-      padding: 7px 18px;
+      padding: 7px 16px;
       border-radius: 100px;
-      font-size: 0.82rem;
+      font-size: 0.78rem;
       font-family: 'Lato', sans-serif;
       font-weight: 700;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeSlideUp 0.6s ease forwards 0.2s;
     }
-    .hero-badge-dot {
+    .badge-dot {
       width: 7px; height: 7px;
       background: #2AB27B;
       border-radius: 50%;
-      animation: pulse 2s infinite;
+      animation: pulseDot 2s infinite;
     }
-    @keyframes pulse {
+    @keyframes pulseDot {
       0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.6; transform: scale(1.3); }
+      50% { opacity: 0.5; transform: scale(1.4); }
     }
+
     .hero h1 {
-      font-size: clamp(2.4rem, 5.5vw, 4rem);
+      font-size: clamp(2.4rem, 3.5vw, 3.6rem);
       font-weight: 900;
-      color: #ffffff;
-      line-height: 1.1;
-      margin-bottom: 24px;
-      letter-spacing: -0.02em;
-    }
-    .hero h1 .accent-blue { color: #4ec6f0; }
-    .hero h1 .accent-green { color: #2AB27B; }
-    .hero-sub {
-      font-size: clamp(1rem, 2.2vw, 1.22rem);
-      color: rgba(255,255,255,0.72);
-      max-width: 640px;
-      margin: 0 auto 40px;
-      line-height: 1.7;
-    }
-    .hero-cta-group {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 56px;
-    }
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: linear-gradient(135deg, #2AB27B, #1f9a6a);
       color: #fff;
-      padding: 16px 36px;
-      border-radius: 100px;
-      font-family: 'Raleway', sans-serif;
-      font-size: 1rem;
-      font-weight: 700;
-      text-decoration: none;
-      box-shadow: var(--shadow-green);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    .btn-primary::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, #33d191, #25b380);
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      margin-bottom: 20px;
       opacity: 0;
-      transition: opacity 0.3s;
+      animation: fadeSlideUp 0.7s ease forwards 0.4s;
     }
-    .btn-primary:hover::before { opacity: 1; }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(42,178,123,0.45); }
-    .btn-primary span { position: relative; z-index: 1; }
-    .btn-secondary {
+    .hero h1 em {
+      font-style: normal;
+      color: #4ec6f0;
+    }
+    .hero h1 .h1-green {
+      color: #2AB27B;
+    }
+
+    .hero-sub {
+      font-size: 1.08rem;
+      color: rgba(255,255,255,0.68);
+      line-height: 1.75;
+      margin-bottom: 36px;
+      max-width: 480px;
+      opacity: 0;
+      animation: fadeSlideUp 0.7s ease forwards 0.6s;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+      opacity: 0;
+      animation: fadeSlideUp 0.6s ease forwards 0.8s;
+    }
+
+    .btn-hero-primary {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.25);
-      color: rgba(255,255,255,0.9);
-      padding: 16px 32px;
+      background: linear-gradient(135deg, #2AB27B, #1d9668);
+      color: #fff;
+      padding: 15px 32px;
       border-radius: 100px;
       font-family: 'Raleway', sans-serif;
-      font-size: 1rem;
+      font-weight: 700;
+      font-size: 0.97rem;
+      text-decoration: none;
+      box-shadow: 0 8px 28px rgba(42,178,123,0.4);
+      transition: all 0.3s ease;
+    }
+    .btn-hero-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 36px rgba(42,178,123,0.5);
+      background: linear-gradient(135deg, #33c98e, #2AB27B);
+    }
+
+    .btn-hero-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      border: 1.5px solid rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.85);
+      padding: 15px 28px;
+      border-radius: 100px;
+      font-family: 'Raleway', sans-serif;
       font-weight: 600;
+      font-size: 0.95rem;
       text-decoration: none;
       transition: all 0.3s ease;
-      backdrop-filter: blur(10px);
     }
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.15);
+    .btn-hero-ghost:hover {
       border-color: rgba(255,255,255,0.5);
-      transform: translateY(-2px);
+      background: rgba(255,255,255,0.07);
       color: #fff;
     }
 
-    /* ─── HERO STATS ─── */
-    .hero-stats {
+    /* Hero stats row */
+    .hero-stats-row {
       display: flex;
       gap: 0;
-      justify-content: center;
-      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeSlideUp 0.6s ease forwards 1s;
     }
     .hero-stat {
-      padding: 0 32px;
-      border-right: 1px solid rgba(255,255,255,0.12);
+      padding: 0 28px;
+      border-right: 1px solid rgba(255,255,255,0.1);
       text-align: center;
     }
+    .hero-stat:first-child { padding-left: 0; }
     .hero-stat:last-child { border-right: none; }
-    .hero-stat-number {
+    .hero-stat-num {
       display: block;
       font-family: 'Raleway', sans-serif;
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: 900;
       color: #4ec6f0;
       line-height: 1;
-      margin-bottom: 4px;
     }
-    .hero-stat-label {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.55);
-      letter-spacing: 0.05em;
+    .hero-stat-lbl {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.06em;
       text-transform: uppercase;
+      margin-top: 3px;
     }
 
-    /* ─── SECTION WRAPPER ─── */
-    .section { padding: 96px 24px; }
-    .section-sm { padding: 64px 24px; }
-    .container { max-width: 1100px; margin: 0 auto; }
-    .container-narrow { max-width: 780px; margin: 0 auto; }
-    .section-label {
-      display: inline-block;
-      font-family: 'Lato', sans-serif;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
+    /* ── Right: Animated Mockup ── */
+    .hero-visual {
+      opacity: 0;
+      animation: fadeSlideIn 0.9s ease forwards 0.5s;
+    }
+    @keyframes fadeSlideIn {
+      from { opacity: 0; transform: translateX(40px) rotateY(8deg); }
+      to { opacity: 1; transform: translateX(0) rotateY(0deg); }
+    }
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .mock-browser {
+      background: #1a2d40;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.07);
+      animation: mockFloat 6s ease-in-out infinite;
+    }
+    @keyframes mockFloat {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-12px) rotate(0.5deg); }
+    }
+
+    .mock-bar {
+      background: #111d2b;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .mock-dots { display: flex; gap: 6px; }
+    .mock-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+    }
+    .mock-dot-r { background: #ff5f57; }
+    .mock-dot-y { background: #febc2e; }
+    .mock-dot-g { background: #28c840; }
+    .mock-url {
+      flex: 1;
+      background: rgba(255,255,255,0.07);
+      border-radius: 6px;
+      padding: 5px 12px;
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.45);
+      font-family: monospace;
+    }
+
+    .mock-body { padding: 16px; }
+    .mock-search-label {
+      font-size: 0.68rem;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--green);
       margin-bottom: 12px;
     }
-    .section-title {
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 800;
-      color: #0d1b2a;
-      line-height: 1.2;
-      margin-bottom: 16px;
-      letter-spacing: -0.02em;
+
+    /* ── Listing cards inside mockup ── */
+    .mock-listing {
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 10px;
+      border: 1px solid rgba(255,255,255,0.07);
+      position: relative;
+      transition: all 0.3s;
     }
-    .section-sub {
-      font-size: 1.08rem;
-      color: var(--gray);
-      max-width: 580px;
-      line-height: 1.7;
+
+    /* FREE listings — desaturated */
+    .mock-listing.free {
+      background: rgba(255,255,255,0.03);
+      opacity: 0.45;
+    }
+
+    /* PAID listing — glowing star */
+    .mock-listing.paid {
+      background: linear-gradient(135deg, rgba(6,127,174,0.2), rgba(42,178,123,0.1));
+      border-color: rgba(6,127,174,0.4);
+      box-shadow: 0 0 24px rgba(6,127,174,0.2), 0 0 0 1px rgba(6,127,174,0.3);
+      animation: paidGlow 3s ease-in-out infinite;
+    }
+    @keyframes paidGlow {
+      0%, 100% { box-shadow: 0 0 20px rgba(6,127,174,0.2), 0 0 0 1px rgba(6,127,174,0.3); }
+      50% { box-shadow: 0 0 36px rgba(6,127,174,0.35), 0 0 0 1px rgba(42,178,123,0.4); }
+    }
+
+    .mock-listing-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+    .mock-listing-name {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: #fff;
+    }
+    .mock-listing-name.dim { color: rgba(255,255,255,0.5); }
+
+    .mock-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 9px;
+      border-radius: 100px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      font-family: 'Lato', sans-serif;
+    }
+    .mock-pill-featured {
+      background: linear-gradient(135deg, #067FAE, #2AB27B);
+      color: #fff;
+    }
+    .mock-pill-free {
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.4);
+    }
+
+    .mock-listing-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .mock-stars-sm { color: #f59e0b; font-size: 0.7rem; letter-spacing: -1px; }
+    .mock-review-count { font-size: 0.68rem; color: rgba(255,255,255,0.45); }
+    .mock-verified-sm {
+      font-size: 0.63rem;
+      color: #2AB27B;
+      font-weight: 700;
+    }
+
+    .mock-chips { display: flex; gap: 6px; margin-top: 10px; flex-wrap: wrap; }
+    .mock-chip {
+      background: rgba(6,127,174,0.2);
+      border: 1px solid rgba(6,127,174,0.3);
+      color: #4ec6f0;
+      padding: 3px 9px;
+      border-radius: 100px;
+      font-size: 0.62rem;
+      font-weight: 600;
+    }
+
+    /* Floating notification badges */
+    .mock-notifications {
+      position: absolute;
+      top: -16px; right: -16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .mock-notif {
+      background: rgba(13,27,42,0.95);
+      border: 1px solid rgba(42,178,123,0.4);
+      color: #fff;
+      padding: 7px 12px;
+      border-radius: 100px;
+      font-size: 0.7rem;
+      font-family: 'Lato', sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+      white-space: nowrap;
+    }
+    .notif-dot { width: 6px; height: 6px; background: #2AB27B; border-radius: 50%; flex-shrink: 0; }
+    .mock-notif-1 { animation: notifPop 4s ease-in-out infinite; }
+    .mock-notif-2 { animation: notifPop 4s ease-in-out infinite 1.5s; }
+    .mock-notif-3 { animation: notifPop 4s ease-in-out infinite 3s; }
+    @keyframes notifPop {
+      0%, 100% { opacity: 0.7; transform: scale(0.97) translateX(4px); }
+      20%, 80% { opacity: 1; transform: scale(1) translateX(0); }
+    }
+
+    /* Label under mockup */
+    .hero-visual-caption {
+      text-align: center;
+      margin-top: 14px;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.35);
+      font-style: italic;
     }
 
     /* ─── TRUST BAR ─── */
     .trust-bar {
       background: #0d1b2a;
-      padding: 24px;
+      padding: 18px 0;
       overflow: hidden;
     }
-    .trust-bar-track {
+    .trust-track {
       display: flex;
-      gap: 64px;
-      animation: marquee 30s linear infinite;
+      gap: 56px;
       white-space: nowrap;
+      animation: ticker 28s linear infinite;
     }
-    .trust-bar-track:hover { animation-play-state: paused; }
-    @keyframes marquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+    .trust-track:hover { animation-play-state: paused; }
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
     }
     .trust-item {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       flex-shrink: 0;
     }
-    .trust-item-icon { color: #2AB27B; font-size: 1.1rem; }
-    .trust-item-text {
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.75);
-      font-family: 'Lato', sans-serif;
-      font-weight: 400;
-    }
-    .trust-item-text strong { color: #fff; }
+    .trust-check { color: #2AB27B; font-weight: 700; }
+    .trust-text { font-size: 0.86rem; color: rgba(255,255,255,0.6); }
+    .trust-text strong { color: rgba(255,255,255,0.9); }
 
-    /* ─── PAIN SECTION ─── */
-    .pain-section {
-      background: var(--light);
-    }
-    .pain-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      margin-top: 56px;
-    }
-    .pain-card {
-      background: #fff;
-      border: 1px solid #e8edf2;
-      border-radius: var(--radius);
-      padding: 32px 28px;
-      transition: all 0.35s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    .pain-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, #067FAE, #2AB27B);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.4s ease;
-    }
-    .pain-card:hover::before { transform: scaleX(1); }
-    .pain-card:hover {
-      border-color: rgba(6,127,174,0.2);
-      box-shadow: var(--shadow-md);
-      transform: translateY(-4px);
-    }
-    .pain-icon {
-      width: 48px; height: 48px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 18px;
-      font-size: 1.4rem;
-    }
-    .pain-icon.red { background: #fff5f5; color: #e53e3e; }
-    .pain-card h3 {
-      font-size: 1.08rem;
+    /* ─── SECTIONS ─── */
+    .section { padding: 88px 40px; }
+    .section-sm { padding: 56px 40px; }
+    .container { max-width: 1140px; margin: 0 auto; }
+    .container-narrow { max-width: 720px; margin: 0 auto; }
+
+    .section-eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
       font-weight: 700;
-      color: #0d1b2a;
+      font-family: 'Lato', sans-serif;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green);
       margin-bottom: 10px;
     }
-    .pain-card p {
-      font-size: 0.92rem;
+    .section-title {
+      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      color: #0d1b2a;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+    }
+    .section-sub {
+      font-size: 1.05rem;
       color: var(--gray);
-      line-height: 1.65;
+      line-height: 1.7;
+      max-width: 580px;
     }
 
-    /* ─── BENEFITS SECTION ─── */
-    .benefits-section { background: #fff; }
-    .benefits-grid {
+    /* ─── WHY DIRECTORY section ─── */
+    .why-section { background: var(--light); }
+    .why-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 28px;
-      margin-top: 56px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 52px;
     }
-    .benefit-card {
-      padding: 36px 32px;
-      border-radius: var(--radius-lg);
-      border: 1px solid #e8edf2;
+    .why-card {
       background: #fff;
-      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      overflow: hidden;
+      border: 1px solid #e5eaf0;
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      transition: all 0.3s ease;
     }
-    .benefit-card::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(6,127,174,0.03), rgba(42,178,123,0.03));
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    .benefit-card:hover::after { opacity: 1; }
-    .benefit-card:hover {
+    .why-card:hover {
       border-color: rgba(6,127,174,0.25);
-      box-shadow: 0 8px 40px rgba(6,127,174,0.12);
-      transform: translateY(-6px);
+      box-shadow: 0 8px 36px rgba(6,127,174,0.1);
+      transform: translateY(-4px);
     }
-    .benefit-icon-wrap {
-      width: 56px; height: 56px;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-      font-size: 1.5rem;
-      background: linear-gradient(135deg, rgba(6,127,174,0.1), rgba(42,178,123,0.1));
-      transition: transform 0.3s ease;
+    .why-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+      display: block;
     }
-    .benefit-card:hover .benefit-icon-wrap { transform: scale(1.1) rotate(5deg); }
-    .benefit-card h3 {
+    .why-card h3 {
       font-size: 1.1rem;
       font-weight: 700;
       color: #0d1b2a;
       margin-bottom: 10px;
     }
-    .benefit-card p {
-      font-size: 0.91rem;
+    .why-card p { font-size: 0.91rem; color: var(--gray); line-height: 1.65; }
+
+    /* ─── PROFILE SHOWCASE ─── */
+    .showcase-section { background: #fff; }
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .showcase-text {}
+    .showcase-list { list-style: none; margin-top: 24px; }
+    .showcase-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid #f0f4f8;
+      font-size: 0.93rem;
+      color: #374151;
+    }
+    .showcase-list li:last-child { border-bottom: none; }
+    .sc-icon { color: var(--green); flex-shrink: 0; font-weight: 700; margin-top: 1px; }
+    .sc-label { font-weight: 700; color: #0d1b2a; }
+
+    /* Profile card mockup (desktop) */
+    .profile-card {
+      background: #fff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 16px 56px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .profile-card:hover { transform: translateY(-4px); }
+    .profile-top-bar {
+      background: linear-gradient(135deg, #067FAE, #2AB27B);
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .profile-top-label { font-size: 0.75rem; font-weight: 700; color: #fff; letter-spacing: 0.06em; }
+    .profile-body { padding: 24px; }
+    .profile-head { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+    .profile-avatar {
+      width: 54px; height: 54px; border-radius: 50%;
+      background: linear-gradient(135deg, #067FAE, #2AB27B);
+      flex-shrink: 0;
+    }
+    .profile-name { font-family: 'Raleway', sans-serif; font-size: 1.05rem; font-weight: 800; color: #0d1b2a; }
+    .profile-sub { font-size: 0.82rem; color: var(--gray); margin-top: 2px; }
+    .profile-badges { display: flex; gap: 8px; margin-top: 6px; }
+    .pb-verified {
+      background: rgba(42,178,123,0.1);
+      color: #1f8a5e;
+      padding: 3px 10px;
+      border-radius: 100px;
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+    .pb-ranked {
+      background: rgba(6,127,174,0.08);
+      color: var(--blue);
+      padding: 3px 10px;
+      border-radius: 100px;
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+    .profile-stars { color: #f59e0b; font-size: 0.85rem; }
+    .profile-reviews { font-size: 0.8rem; color: var(--gray); margin-left: 6px; }
+    .profile-quote {
+      font-size: 0.82rem;
       color: var(--gray);
-      line-height: 1.65;
+      font-style: italic;
+      border-left: 2px solid #e2e8f0;
+      padding-left: 12px;
+      margin: 14px 0;
+      line-height: 1.55;
+    }
+    .profile-contacts { display: flex; gap: 8px; flex-wrap: wrap; }
+    .pc {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: #f0f7fd; border: 1px solid #d0e8f5;
+      color: var(--blue); padding: 5px 12px; border-radius: 100px;
+      font-size: 0.76rem; font-weight: 600;
     }
 
-    /* ─── COUNTER SECTION ─── */
-    .counter-section {
-      background: linear-gradient(135deg, #0d1b2a 0%, #083d5c 100%);
+    /* ─── BENEFITS ─── */
+    .benefits-section { background: var(--light); }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 52px;
+    }
+    .benefit-card {
+      background: #fff;
+      border: 1px solid #e5eaf0;
+      border-radius: var(--radius-lg);
+      padding: 32px 26px;
+      transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
     }
-    .counter-section::before {
+    .benefit-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--blue), var(--green));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .benefit-card:hover::before { transform: scaleX(1); }
+    .benefit-card:hover {
+      border-color: rgba(6,127,174,0.2);
+      box-shadow: 0 8px 32px rgba(6,127,174,0.1);
+      transform: translateY(-4px);
+    }
+    .benefit-icon {
+      width: 48px; height: 48px;
+      background: linear-gradient(135deg, rgba(6,127,174,0.1), rgba(42,178,123,0.1));
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+      transition: transform 0.3s;
+    }
+    .benefit-card:hover .benefit-icon { transform: scale(1.1) rotate(5deg); }
+    .benefit-card h3 { font-size: 1rem; font-weight: 700; color: #0d1b2a; margin-bottom: 8px; }
+    .benefit-card p { font-size: 0.88rem; color: var(--gray); line-height: 1.6; }
+
+    /* ─── COUNTERS ─── */
+    .counters-section {
+      background: linear-gradient(135deg, #0d1b2a, #083d5c);
+      position: relative;
+      overflow: hidden;
+    }
+    .counters-section::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse 80% 80% at 50% 50%, rgba(6,127,174,0.15), transparent);
+      background: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(6,127,174,0.18), transparent);
     }
     .counters-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 40px;
       position: relative;
       z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
     }
     .counter-item { text-align: center; }
-    .counter-number {
+    .counter-num {
+      display: block;
       font-family: 'Raleway', sans-serif;
-      font-size: clamp(2.5rem, 5vw, 3.8rem);
+      font-size: clamp(2.4rem, 4vw, 3.5rem);
       font-weight: 900;
       color: #fff;
       line-height: 1;
       margin-bottom: 8px;
-      display: block;
     }
-    .counter-number .counter-accent { color: #2AB27B; }
-    .counter-label {
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.6);
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      line-height: 1.4;
-    }
+    .counter-num.green { color: #2AB27B; }
+    .counter-lbl { font-size: 0.8rem; color: rgba(255,255,255,0.55); letter-spacing: 0.05em; text-transform: uppercase; line-height: 1.4; }
 
-    /* ─── COMPARISON SECTION ─── */
+    /* ─── COMPARISON ─── */
     .comparison-section { background: var(--light); }
-    .comparison-table-wrap {
-      margin-top: 56px;
-      overflow-x: auto;
+    .table-wrap {
+      margin-top: 52px;
       border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.1);
     }
-    .comparison-table {
-      width: 100%;
-      border-collapse: collapse;
-      background: #fff;
-      font-size: 0.92rem;
-    }
-    .comparison-table th {
-      padding: 20px 24px;
+    table { width: 100%; border-collapse: collapse; background: #fff; font-size: 0.91rem; }
+    th {
+      padding: 18px 22px;
       font-family: 'Raleway', sans-serif;
       font-weight: 800;
-      font-size: 0.95rem;
-      letter-spacing: 0.02em;
-      text-align: center;
+      font-size: 0.92rem;
     }
-    .comparison-table th:first-child { text-align: left; width: 35%; }
-    .comparison-table th.th-jgl {
-      background: linear-gradient(135deg, #067FAE, #055e82);
-      color: #fff;
-    }
-    .comparison-table th.th-others { background: #f0f2f5; color: #6b7280; }
-    .comparison-table th.th-feature { background: #fff; color: #0d1b2a; }
-    .comparison-table td {
-      padding: 16px 24px;
-      border-bottom: 1px solid #f0f2f5;
-    }
-    .comparison-table td:not(:first-child) { text-align: center; }
-    .comparison-table tr:last-child td { border-bottom: none; }
-    .comparison-table tr:hover td { background: #fafbfc; }
-    .comparison-table td.feature-name {
-      font-weight: 600;
-      color: #0d1b2a;
-    }
-    .check { color: #2AB27B; font-size: 1.2rem; font-weight: 700; }
-    .cross { color: #e53e3e; font-size: 1.1rem; }
-    .partial { color: #f59e0b; font-size: 0.85rem; font-weight: 600; }
-    .td-jgl { background: rgba(6,127,174,0.04); }
+    th.th-feature { text-align: left; background: #fff; color: #0d1b2a; width: 35%; }
+    th.th-jgl { background: linear-gradient(135deg, #067FAE, #055e82); color: #fff; text-align: center; }
+    th.th-other { background: #f0f3f6; color: #6b7280; text-align: center; }
+    td { padding: 14px 22px; border-bottom: 1px solid #f0f4f8; }
+    td:not(:first-child) { text-align: center; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #fafbfc; }
+    td.feat { font-weight: 600; color: #0d1b2a; }
+    td.jgl-col { background: rgba(6,127,174,0.03); }
+    .ck { color: #2AB27B; font-size: 1.15rem; font-weight: 700; }
+    .xx { color: #e53e3e; font-size: 1rem; }
+    .pp { color: #f59e0b; font-size: 0.82rem; font-weight: 700; }
+    .price-good { color: #2AB27B; font-weight: 700; }
+    .price-bad { color: #e53e3e; }
 
     /* ─── PRICING ─── */
     .pricing-section { background: #fff; }
     .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 28px;
-      margin-top: 56px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 52px;
       align-items: start;
     }
-    .pricing-card {
+    .price-card {
+      border: 2px solid #e5eaf0;
       border-radius: var(--radius-lg);
-      border: 2px solid #e8edf2;
-      padding: 40px 32px;
+      padding: 36px 28px;
       background: #fff;
-      transition: all 0.35s ease;
+      transition: all 0.3s ease;
       position: relative;
     }
-    .pricing-card:hover {
+    .price-card:hover {
       border-color: var(--blue);
-      box-shadow: var(--shadow-blue);
+      box-shadow: 0 12px 40px rgba(6,127,174,0.15);
       transform: translateY(-4px);
     }
-    .pricing-card.featured {
+    .price-card.pop {
       border-color: var(--blue);
-      background: linear-gradient(180deg, #f0f8fd 0%, #fff 40%);
-      box-shadow: var(--shadow-blue);
+      background: linear-gradient(180deg, #f0f8fd 0%, #fff 50%);
+      box-shadow: 0 12px 40px rgba(6,127,174,0.18);
       transform: scale(1.03);
     }
-    .pricing-card.featured:hover { transform: scale(1.03) translateY(-4px); }
-    .pricing-badge {
+    .price-card.pop:hover { transform: scale(1.03) translateY(-4px); }
+    .pop-label {
       position: absolute;
-      top: -14px;
+      top: -13px;
       left: 50%;
       transform: translateX(-50%);
-      background: linear-gradient(135deg, #067FAE, #2AB27B);
+      background: linear-gradient(135deg, var(--blue), var(--green));
       color: #fff;
-      padding: 5px 18px;
+      padding: 4px 18px;
       border-radius: 100px;
-      font-size: 0.75rem;
-      font-family: 'Lato', sans-serif;
+      font-size: 0.72rem;
       font-weight: 700;
+      font-family: 'Lato', sans-serif;
       letter-spacing: 0.06em;
       text-transform: uppercase;
       white-space: nowrap;
     }
-    .pricing-tier-name {
-      font-family: 'Raleway', sans-serif;
-      font-size: 1.15rem;
-      font-weight: 800;
-      color: #0d1b2a;
-      margin-bottom: 8px;
-    }
-    .pricing-price {
-      font-family: 'Raleway', sans-serif;
-      font-size: 2.8rem;
-      font-weight: 900;
-      color: var(--blue);
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-    .pricing-price .currency {
-      font-size: 1.4rem;
-      vertical-align: top;
-      margin-top: 6px;
-      display: inline-block;
-    }
-    .pricing-price.free-price {
-      font-size: 2.2rem;
-      color: var(--gray);
-    }
-    .pricing-period {
-      font-size: 0.82rem;
-      color: var(--gray);
-      margin-bottom: 8px;
-    }
-    .pricing-per-month {
+    .price-tier { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 1.1rem; color: #0d1b2a; margin-bottom: 6px; }
+    .price-amount { font-family: 'Raleway', sans-serif; font-weight: 900; line-height: 1; }
+    .price-amount .curr { font-size: 1.3rem; vertical-align: top; margin-top: 4px; display: inline-block; color: var(--blue); }
+    .price-amount .num { font-size: 2.8rem; color: var(--blue); }
+    .price-amount.free-amt { font-size: 2.2rem; color: var(--gray); }
+    .price-period { font-size: 0.8rem; color: var(--gray); margin-bottom: 6px; }
+    .price-monthly {
       display: inline-block;
       background: rgba(42,178,123,0.1);
-      color: var(--green-dark);
+      color: #1f8a5e;
       padding: 3px 10px;
       border-radius: 100px;
-      font-size: 0.8rem;
+      font-size: 0.76rem;
       font-weight: 700;
-      margin-bottom: 28px;
-    }
-    .pricing-divider {
-      height: 1px;
-      background: #e8edf2;
       margin-bottom: 24px;
     }
-    .pricing-features { list-style: none; margin-bottom: 32px; }
-    .pricing-features li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      padding: 7px 0;
-      font-size: 0.9rem;
-      color: #374151;
-      line-height: 1.4;
-    }
-    .pricing-features li .feat-check { color: var(--green); flex-shrink: 0; margin-top: 2px; }
-    .pricing-features li .feat-dash { color: #d1d5db; flex-shrink: 0; margin-top: 2px; }
-    .btn-pricing {
+    .price-div { height: 1px; background: #e5eaf0; margin-bottom: 20px; }
+    .price-feats { list-style: none; margin-bottom: 28px; }
+    .price-feats li { display: flex; align-items: flex-start; gap: 9px; padding: 6px 0; font-size: 0.88rem; color: #374151; line-height: 1.4; }
+    .pf-yes { color: var(--green); flex-shrink: 0; margin-top: 2px; font-weight: 700; }
+    .pf-no { color: #d1d5db; flex-shrink: 0; margin-top: 2px; }
+    .btn-plan {
       display: block;
       width: 100%;
       text-align: center;
-      padding: 14px 24px;
+      padding: 13px 20px;
       border-radius: 100px;
       font-family: 'Raleway', sans-serif;
-      font-size: 0.95rem;
       font-weight: 700;
+      font-size: 0.93rem;
       text-decoration: none;
-      transition: all 0.3s ease;
+      transition: all 0.3s;
     }
-    .btn-pricing.primary {
+    .btn-plan.blue {
       background: linear-gradient(135deg, #067FAE, #055e82);
       color: #fff;
-      box-shadow: var(--shadow-blue);
+      box-shadow: 0 6px 20px rgba(6,127,174,0.3);
     }
-    .btn-pricing.primary:hover {
-      background: linear-gradient(135deg, #0896cc, #067FAE);
-      transform: translateY(-2px);
-      box-shadow: 0 12px 36px rgba(6,127,174,0.4);
-    }
-    .btn-pricing.secondary-outline {
-      border: 2px solid #e8edf2;
-      color: var(--gray);
-      background: transparent;
-    }
-    .btn-pricing.secondary-outline:hover {
-      border-color: #b0bec5;
-      color: #0d1b2a;
-    }
-    .pricing-note {
-      text-align: center;
-      margin-top: 32px;
-      font-size: 0.85rem;
-      color: var(--gray);
-    }
-    .pricing-note a { color: var(--blue); text-decoration: none; }
+    .btn-plan.blue:hover { box-shadow: 0 10px 30px rgba(6,127,174,0.45); transform: translateY(-2px); background: linear-gradient(135deg, #0896cc, #067FAE); }
+    .btn-plan.ghost { border: 2px solid #e5eaf0; color: var(--gray); background: transparent; }
+    .btn-plan.ghost:hover { border-color: #b0bec5; color: #0d1b2a; }
 
     /* ─── HOW IT WORKS ─── */
     .hiw-section { background: var(--light); }
-    .hiw-steps {
+    .hiw-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 0;
-      margin-top: 64px;
+      margin-top: 56px;
       position: relative;
     }
-    .hiw-steps::before {
+    .hiw-grid::before {
       content: '';
       position: absolute;
-      top: 36px;
-      left: 15%;
-      right: 15%;
+      top: 35px; left: 12%; right: 12%;
       height: 2px;
-      background: linear-gradient(90deg, #067FAE, #2AB27B);
+      background: linear-gradient(90deg, var(--blue), var(--green));
     }
-    .hiw-step { text-align: center; padding: 0 20px; position: relative; }
-    .hiw-step-number {
-      width: 72px; height: 72px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #067FAE, #2AB27B);
+    .hiw-step { text-align: center; padding: 0 20px; }
+    .hiw-num {
+      width: 70px; height: 70px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--green));
       color: #fff;
       font-family: 'Raleway', sans-serif;
       font-size: 1.4rem;
       font-weight: 900;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 24px;
-      position: relative;
-      z-index: 1;
-      box-shadow: 0 6px 24px rgba(6,127,174,0.35);
-      transition: transform 0.3s ease;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+      position: relative; z-index: 1;
+      box-shadow: 0 6px 20px rgba(6,127,174,0.35);
+      transition: transform 0.3s;
     }
-    .hiw-step:hover .hiw-step-number { transform: scale(1.1); }
-    .hiw-step h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: #0d1b2a;
-      margin-bottom: 10px;
-    }
-    .hiw-step p {
-      font-size: 0.88rem;
-      color: var(--gray);
-      line-height: 1.6;
-    }
+    .hiw-step:hover .hiw-num { transform: scale(1.1); }
+    .hiw-step h3 { font-size: 0.95rem; font-weight: 700; color: #0d1b2a; margin-bottom: 8px; }
+    .hiw-step p { font-size: 0.84rem; color: var(--gray); line-height: 1.6; }
 
     /* ─── FINAL CTA ─── */
-    .final-cta {
-      background: linear-gradient(135deg, #0d1b2a 0%, #0f2c45 50%, #067FAE 100%);
+    .final-section {
+      background: linear-gradient(135deg, #0a1628, #0d2a45, #067FAE);
+      text-align: center;
       position: relative;
       overflow: hidden;
-      text-align: center;
     }
-    .final-cta::before {
+    .final-section::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse 70% 70% at 50% 100%, rgba(42,178,123,0.2), transparent);
+      background: radial-gradient(ellipse 60% 80% at 50% 100%, rgba(42,178,123,0.2), transparent);
     }
-    .final-cta-content { position: relative; z-index: 1; }
-    .final-cta h2 {
-      font-size: clamp(1.9rem, 4vw, 3rem);
+    .final-inner { position: relative; z-index: 1; }
+    .final-section h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
       font-weight: 900;
       color: #fff;
       margin-bottom: 16px;
       letter-spacing: -0.02em;
     }
-    .final-cta p {
-      font-size: 1.1rem;
-      color: rgba(255,255,255,0.72);
-      margin-bottom: 40px;
-      max-width: 540px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .final-cta-buttons {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
+    .final-section p { font-size: 1.05rem; color: rgba(255,255,255,0.68); margin-bottom: 40px; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .final-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
     /* ─── FOOTER ─── */
     .footer {
-      background: #060e17;
-      padding: 32px 24px;
+      background: #060d16;
+      padding: 28px 40px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: 12px;
     }
-    .footer-logo img {
-      height: 28px;
-      filter: brightness(0) invert(1);
-      opacity: 0.6;
-      transition: opacity 0.2s;
+    .footer-logo {
+      background: rgba(255,255,255,0.1);
+      padding: 5px 10px;
+      border-radius: 6px;
     }
-    .footer-logo img:hover { opacity: 1; }
-    .footer-links {
-      display: flex;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-    .footer-links a {
-      font-size: 0.82rem;
-      color: rgba(255,255,255,0.45);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .footer-links a:hover { color: rgba(255,255,255,0.8); }
-    .footer-copy {
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.3);
-    }
+    .footer-logo img { height: 24px; display: block; }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.8rem; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: rgba(255,255,255,0.7); }
+    .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.25); }
 
-    /* ─── FLOATING CTA BAR ─── */
-    .floating-cta {
+    /* ─── FLOATING BAR ─── */
+    .floating-bar {
       position: fixed;
       bottom: -80px;
       left: 0; right: 0;
       z-index: 900;
-      padding: 14px 24px;
-      background: rgba(13,27,42,0.96);
+      background: rgba(10,22,40,0.97);
       backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-top: 1px solid rgba(6,127,174,0.3);
+      border-top: 1px solid rgba(6,127,174,0.25);
+      padding: 12px 40px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      transition: bottom 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: bottom 0.4s cubic-bezier(0.4,0,0.2,1);
     }
-    .floating-cta.visible { bottom: 0; }
-    .floating-cta-text {
-      font-family: 'Lato', sans-serif;
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.8);
-    }
-    .floating-cta-text strong { color: #fff; }
-    .floating-cta-btn {
+    .floating-bar.show { bottom: 0; }
+    .floating-bar-text { font-size: 0.88rem; color: rgba(255,255,255,0.75); }
+    .floating-bar-text strong { color: #fff; }
+    .floating-bar-btn {
       flex-shrink: 0;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: linear-gradient(135deg, #2AB27B, #1f9a6a);
+      display: inline-flex; align-items: center; gap: 8px;
+      background: linear-gradient(135deg, #2AB27B, #1d9668);
       color: #fff;
-      padding: 11px 28px;
+      padding: 10px 26px;
       border-radius: 100px;
       font-family: 'Raleway', sans-serif;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 700;
       text-decoration: none;
-      transition: all 0.3s;
       box-shadow: 0 4px 16px rgba(42,178,123,0.35);
+      transition: all 0.3s;
     }
-    .floating-cta-btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 8px 24px rgba(42,178,123,0.5);
-    }
-
-    /* ─── SEO SECTION ─── */
-    .seo-section { background: #fff; }
-    .seo-feature {
-      display: flex;
-      align-items: center;
-      gap: 48px;
-      flex-wrap: wrap;
-    }
-    .seo-feature.reverse { flex-direction: row-reverse; }
-    .seo-text { flex: 1; min-width: 260px; }
-    .seo-text h3 {
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: #0d1b2a;
-      margin-bottom: 16px;
-    }
-    .seo-text p {
-      font-size: 0.97rem;
-      color: var(--gray);
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
-    .seo-visual {
-      flex: 1;
-      min-width: 260px;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-    }
-    .mock-profile {
-      background: linear-gradient(135deg, #f8fafc, #fff);
-      border: 1.5px solid #e2e8f0;
-      border-radius: var(--radius-lg);
-      padding: 28px;
-      box-shadow: var(--shadow-md);
-    }
-    .mock-profile-header {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 20px;
-    }
-    .mock-avatar {
-      width: 56px; height: 56px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #067FAE, #2AB27B);
-      flex-shrink: 0;
-    }
-    .mock-name {
-      font-family: 'Raleway', sans-serif;
-      font-weight: 800;
-      font-size: 1.05rem;
-      color: #0d1b2a;
-      margin-bottom: 4px;
-    }
-    .mock-badge-row { display: flex; gap: 8px; align-items: center; }
-    .mock-verified {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      background: rgba(42,178,123,0.12);
-      color: #1f8a5e;
-      padding: 3px 10px;
-      border-radius: 100px;
-      font-size: 0.75rem;
-      font-weight: 700;
-    }
-    .mock-rank {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      background: rgba(6,127,174,0.1);
-      color: var(--blue);
-      padding: 3px 10px;
-      border-radius: 100px;
-      font-size: 0.75rem;
-      font-weight: 700;
-    }
-    .mock-stars { color: #f59e0b; font-size: 0.85rem; margin-bottom: 12px; }
-    .mock-review-text {
-      font-size: 0.82rem;
-      color: #6b7280;
-      font-style: italic;
-      line-height: 1.5;
-      border-left: 2px solid #e2e8f0;
-      padding-left: 12px;
-      margin-bottom: 16px;
-    }
-    .mock-contact-row {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .mock-contact-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: #f0f8fd;
-      border: 1px solid #d0e8f5;
-      color: var(--blue);
-      padding: 5px 12px;
-      border-radius: 100px;
-      font-size: 0.78rem;
-      font-weight: 600;
-    }
-    .mock-featured-label {
-      background: linear-gradient(90deg, #067FAE, #2AB27B);
-      color: #fff;
-      text-align: center;
-      padding: 8px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      margin: -28px -28px 20px;
-      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-    }
+    .floating-bar-btn:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(42,178,123,0.5); }
 
     /* ─── RESPONSIVE ─── */
-    @media (max-width: 768px) {
-      .hero { padding: 100px 16px 64px; }
-      .hero-stat { padding: 0 16px; }
-      .hero-stat-number { font-size: 1.5rem; }
-      .hiw-steps::before { display: none; }
-      .hiw-steps { gap: 32px; }
-      .comparison-table { font-size: 0.82rem; }
-      .comparison-table th, .comparison-table td { padding: 12px 14px; }
-      .pricing-card.featured { transform: scale(1); }
-      .pricing-card.featured:hover { transform: translateY(-4px); }
-      .footer { flex-direction: column; text-align: center; }
-      .floating-cta { flex-direction: column; text-align: center; }
-      .seo-feature, .seo-feature.reverse { flex-direction: column; gap: 32px; }
+    @media (max-width: 1024px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero-visual { order: -1; }
+      .mock-notifications { display: none; }
+      .why-grid, .benefits-grid, .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+      .counters-grid { grid-template-columns: repeat(2, 1fr); }
+      .hiw-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+      .hiw-grid::before { display: none; }
+      .showcase-grid { grid-template-columns: 1fr; gap: 40px; }
     }
-
-    /* ─── ANIMATIONS ─── */
-    [data-aos] { will-change: transform, opacity; }
+    @media (max-width: 640px) {
+      .hero { padding: 90px 20px 50px; }
+      .navbar, .navbar.scrolled { padding: 12px 20px; }
+      .section { padding: 64px 20px; }
+      .why-grid, .benefits-grid, .pricing-grid { grid-template-columns: 1fr; }
+      .counters-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .hiw-grid { grid-template-columns: 1fr; }
+      .price-card.pop { transform: scale(1); }
+      .hero-stats-row { gap: 0; flex-wrap: wrap; }
+      .footer { flex-direction: column; text-align: center; }
+      .floating-bar { flex-direction: column; text-align: center; padding: 14px 20px; }
+      .table-wrap { font-size: 0.8rem; }
+      th, td { padding: 10px 12px; }
+    }
   </style>
 </head>
 <body>
 
-<!-- Cursor Glow -->
-<div class="cursor-glow" id="cursorGlow"></div>
-
-<!-- Floating CTA Bar -->
-<div class="floating-cta" id="floatingCta">
-  <div class="floating-cta-text">
-    <strong>Only ~140 paid attorneys nationwide.</strong> Most markets are wide open.
+<!-- Floating bar -->
+<div class="floating-bar" id="floatBar">
+  <div class="floating-bar-text">
+    <strong>Less than 1% of attorneys on this directory are verified paid members.</strong> Most cities still have open spots.
   </div>
-  <a href="https://www.justgreatlawyers.com/checkout/2" class="floating-cta-btn">
-    <span>Claim Your Spot →</span>
-  </a>
+  <a href="https://www.justgreatlawyers.com/checkout/2" class="floating-bar-btn">Claim Your Spot →</a>
 </div>
 
 <!-- Navbar -->
@@ -1013,148 +998,241 @@
     <img src="https://ik.imagekit.io/8nsf9m22suv/images/JustGreatLawyers_2.png" alt="JustGreatLawyers" />
   </a>
   <a href="https://www.justgreatlawyers.com" class="nav-back">
-    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+    <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
     </svg>
     Back to JustGreatLawyers.com
   </a>
 </nav>
 
-<!-- ═══════════ HERO ═══════════ -->
+<!-- ══════════ HERO ══════════ -->
 <section class="hero">
-  <div class="hero-bg-mesh"></div>
-  <div class="hero-grid-lines"></div>
-  <div class="hero-orb hero-orb-1"></div>
-  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-blob hero-blob-1"></div>
+  <div class="hero-blob hero-blob-2"></div>
+  <div class="hero-blob hero-blob-3"></div>
+  <div class="hero-grid"></div>
 
-  <div class="hero-container">
-    <div class="hero-badge">
-      <div class="hero-badge-dot"></div>
-      Now accepting attorneys — limited paid spots per market
-    </div>
-
-    <h1>
-      <span id="heroHeadline">Stop Losing Clients<br />to Lawyers Who <span class="accent-blue">Rank Higher</span><br />Than You</span>
-    </h1>
-
-    <p class="hero-sub">
-      16,000 high-intent clients search JustGreatLawyers.com every month.
-      Right now, a handful of verified attorneys in your market are getting all of them.
-      Your profile is already on the site — it's just buried under paid listings.
-    </p>
-
-    <div class="hero-cta-group">
-      <a href="https://www.justgreatlawyers.com/checkout/2" class="btn-primary">
-        <span>Claim My Featured Listing</span>
-        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-        </svg>
-      </a>
-      <a href="#pricing" class="btn-secondary">See All Plans</a>
-    </div>
-
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <span class="hero-stat-number" data-count="16000" data-suffix="K+">16K+</span>
-        <span class="hero-stat-label">Monthly Users</span>
+  <div class="hero-inner">
+    <!-- Left: Copy -->
+    <div class="hero-text">
+      <div class="hero-badge">
+        <div class="badge-dot"></div>
+        16,000 client searches per month
       </div>
-      <div class="hero-stat">
-        <span class="hero-stat-number">DA 66</span>
-        <span class="hero-stat-label">Domain Authority</span>
-      </div>
-      <div class="hero-stat">
-        <span class="hero-stat-number">80K+</span>
-        <span class="hero-stat-label">Attorney Profiles</span>
-      </div>
-      <div class="hero-stat">
-        <span class="hero-stat-number">~140</span>
-        <span class="hero-stat-label">Paid Members</span>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- Trust Bar -->
-<div class="trust-bar">
-  <div class="trust-bar-track" id="trustTrack">
-    <div class="trust-item"><span class="trust-item-icon">✓</span><span class="trust-item-text"><strong>DA 66</strong> Domain Authority — profiles rank in Google</span></div>
-    <div class="trust-item"><span class="trust-item-icon">✓</span><span class="trust-item-text"><strong>No per-lead charges</strong> — flat annual fee only</span></div>
-    <div class="trust-item"><span class="trust-item-icon">✓</span><span class="trust-item-text"><strong>16K monthly searches</strong> — high-intent legal clients</span></div>
-    <div class="trust-item"><span class="trust-item-icon">✓</span><span class="trust-item-text"><strong>No bidding wars</strong> — unlike Avvo or FindLaw</span></div>
-    <div class="trust-item"><span class="trust-item-icon">✓</span><span class="trust-item-text"><strong>Verified badge</strong> — instant trust with visitors</span></div>
-    <div class="trust-item"><span class="trust-item-icon">✓</span><span class="trust-item-text"><strong>Google Reviews</strong> displayed directly on your profile</span></div>
-    <div class="trust-item"><span class="trust-item-icon">✓</span><span class="trust-item-text"><strong>~25/mo</strong> — from $299/yr billed annually</span></div>
-    <!-- Duplicate for seamless loop -->
-    <div class="trust-item"><span class="trust-item-icon">✓</span><span class="trust-item-text"><strong>DA 66</strong> Domain Authority — profiles rank in Google</span></div>
-    <div class="trust-item"><span class="trust-item-icon">✓</span><span class="trust-item-text"><strong>No per-lead charges</strong> — flat annual fee only</span></div>
-    <div class="trust-item"><span class="trust-item-icon">✓</span><span class="trust-item-text"><strong>16K monthly searches</strong> — high-intent legal clients</span></div>
-    <div class="trust-item"><span class="trust-item-icon">✓</span><span class="trust-item-text"><strong>No bidding wars</strong> — unlike Avvo or FindLaw</span></div>
-    <div class="trust-item"><span class="trust-item-icon">✓</span><span class="trust-item-text"><strong>Verified badge</strong> — instant trust with visitors</span></div>
-    <div class="trust-item"><span class="trust-item-icon">✓</span><span class="trust-item-text"><strong>Google Reviews</strong> displayed directly on your profile</span></div>
-    <div class="trust-item"><span class="trust-item-icon">✓</span><span class="trust-item-text"><strong>~25/mo</strong> — from $299/yr billed annually</span></div>
-  </div>
-</div>
+      <h1>
+        Be the Attorney<br />
+        Clients Find <em>First</em><br />
+        in Your City
+      </h1>
 
-<!-- ═══════════ PAIN POINTS ═══════════ -->
-<section class="section pain-section">
-  <div class="container">
-    <div class="container-narrow" data-aos="fade-up">
-      <span class="section-label">Sound Familiar?</span>
-      <h2 class="section-title">You're already on the directory.<br />But clients aren't finding you.</h2>
-      <p class="section-sub">Over 80,000 attorneys have profiles on JustGreatLawyers.com. Only ~140 are paid members. That means free profiles are buried — while a small group of verified attorneys collects all the leads.</p>
-    </div>
-    <div class="pain-grid">
-      <div class="pain-card" data-aos="fade-up" data-aos-delay="0">
-        <div class="pain-icon red">💸</div>
-        <h3>Paying Avvo $300–$600+ per month</h3>
-        <p>Lead auction platforms charge per-inquiry and pit you against competitors in a bidding war that only gets more expensive over time.</p>
-      </div>
-      <div class="pain-card" data-aos="fade-up" data-aos-delay="80">
-        <div class="pain-icon red">👻</div>
-        <h3>Your profile exists but gets zero traffic</h3>
-        <p>A free listing on a directory with 80K+ profiles is effectively invisible. Clients see the top 3–5 results. You need to be there.</p>
-      </div>
-      <div class="pain-card" data-aos="fade-up" data-aos-delay="160">
-        <div class="pain-icon red">📉</div>
-        <h3>No SEO value from your current listings</h3>
-        <p>Most directory profiles don't pass link equity. A DA 66 backlink from a Google-indexed profile that ranks for "[practice area] lawyer [city]" actually moves the needle.</p>
-      </div>
-    </div>
-  </div>
-</section>
+      <p class="hero-sub">
+        JustGreatLawyers.com connects high-intent legal clients with attorneys in their area.
+        Your profile is already listed — but without a paid membership, it's buried below
+        the handful of attorneys who actually get the calls.
+      </p>
 
-<!-- ═══════════ PROFILE VISUAL / BENEFITS ═══════════ -->
-<section class="section seo-section">
-  <div class="container">
-    <div class="seo-feature" data-aos="fade-up">
-      <div class="seo-text">
-        <span class="section-label">What You Get</span>
-        <h3>A profile that actually converts</h3>
-        <p>Paid members get a fully-featured profile with your verified badge, full Google Reviews feed, direct contact information, and priority placement above all free listings in your practice area and location.</p>
-        <p>Clients see your number, your website, your social media — and they can contact you directly. No middleman. No lead fee.</p>
-        <a href="https://www.justgreatlawyers.com/checkout/2" class="btn-primary" style="display:inline-flex; margin-top:8px;">
-          <span>Claim Featured Listing — $299/yr</span>
+      <div class="hero-ctas">
+        <a href="https://www.justgreatlawyers.com/checkout/2" class="btn-hero-primary">
+          Claim My Featured Listing
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+          </svg>
         </a>
+        <a href="#pricing" class="btn-hero-ghost">See Plans</a>
       </div>
-      <div class="seo-visual" data-aos="fade-left" data-aos-delay="100">
-        <div class="mock-profile">
-          <div class="mock-featured-label">⭐ FEATURED — Priority Placement</div>
-          <div class="mock-profile-header">
-            <div class="mock-avatar"></div>
-            <div>
-              <div class="mock-name">Sarah Johnson, Esq.</div>
-              <div class="mock-badge-row">
-                <span class="mock-verified">✓ Verified</span>
-                <span class="mock-rank">↑ Top Result</span>
+
+      <div class="hero-stats-row">
+        <div class="hero-stat">
+          <span class="hero-stat-num">16K+</span>
+          <div class="hero-stat-lbl">Monthly<br/>Searches</div>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">DA 66</span>
+          <div class="hero-stat-lbl">Domain<br/>Authority</div>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">$25/mo</span>
+          <div class="hero-stat-lbl">Starting<br/>Price</div>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">&lt;1%</span>
+          <div class="hero-stat-lbl">Paid<br/>Members</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Animated Mockup -->
+    <div class="hero-visual">
+      <div style="position: relative;">
+        <!-- Floating notifications -->
+        <div class="mock-notifications">
+          <div class="mock-notif mock-notif-1">
+            <div class="notif-dot"></div> New inquiry — Personal Injury, Chicago
+          </div>
+          <div class="mock-notif mock-notif-2">
+            <div class="notif-dot"></div> Profile viewed 34 times today
+          </div>
+          <div class="mock-notif mock-notif-3">
+            <div class="notif-dot"></div> ★ New Google review published
+          </div>
+        </div>
+
+        <div class="mock-browser">
+          <div class="mock-bar">
+            <div class="mock-dots">
+              <div class="mock-dot mock-dot-r"></div>
+              <div class="mock-dot mock-dot-y"></div>
+              <div class="mock-dot mock-dot-g"></div>
+            </div>
+            <div class="mock-url">justgreatlawyers.com / personal-injury / chicago</div>
+          </div>
+          <div class="mock-body">
+            <div class="mock-search-label">Showing attorneys near Chicago, IL — Personal Injury</div>
+
+            <!-- PAID listing first -->
+            <div class="mock-listing paid">
+              <div class="mock-listing-top">
+                <span class="mock-listing-name">Sarah J. — Personal Injury Attorney</span>
+                <span class="mock-pill mock-pill-featured">⭐ Featured</span>
+              </div>
+              <div class="mock-listing-meta">
+                <span class="mock-stars-sm">★★★★★</span>
+                <span class="mock-review-count">4.9 (47 reviews)</span>
+                <span class="mock-verified-sm">✓ Verified</span>
+              </div>
+              <div class="mock-chips">
+                <span class="mock-chip">📞 Direct Phone</span>
+                <span class="mock-chip">🌐 Website</span>
+                <span class="mock-chip">💼 LinkedIn</span>
+              </div>
+            </div>
+
+            <!-- Free listings below -->
+            <div class="mock-listing free">
+              <div class="mock-listing-top">
+                <span class="mock-listing-name dim">John D. — Attorney at Law</span>
+                <span class="mock-pill mock-pill-free">Free</span>
+              </div>
+              <div class="mock-listing-meta">
+                <span class="mock-review-count" style="font-size:0.66rem;color:rgba(255,255,255,0.3);">No reviews · No contact info</span>
+              </div>
+            </div>
+
+            <div class="mock-listing free">
+              <div class="mock-listing-top">
+                <span class="mock-listing-name dim">Michael T. — Legal Services</span>
+                <span class="mock-pill mock-pill-free">Free</span>
+              </div>
+              <div class="mock-listing-meta">
+                <span class="mock-review-count" style="font-size:0.66rem;color:rgba(255,255,255,0.3);">No reviews · No contact info</span>
               </div>
             </div>
           </div>
-          <div class="mock-stars">★★★★★ <span style="color:#6b7280;font-size:0.8rem;">4.9 · 47 Google Reviews</span></div>
-          <div class="mock-review-text">"Sarah handled my case with incredible professionalism. Highly recommend to anyone needing a family law attorney in Chicago."</div>
-          <div class="mock-contact-row">
-            <div class="mock-contact-chip">📞 (312) 555-0192</div>
-            <div class="mock-contact-chip">🌐 Website</div>
-            <div class="mock-contact-chip">💼 LinkedIn</div>
+        </div>
+      </div>
+      <div class="hero-visual-caption">How clients see search results — paid listing ranks first</div>
+    </div>
+  </div>
+</section>
+
+<!-- Trust bar -->
+<div class="trust-bar">
+  <div class="trust-track">
+    <div class="trust-item"><span class="trust-check">✓</span><span class="trust-text"><strong>DA 66</strong> — profiles rank in Google</span></div>
+    <div class="trust-item"><span class="trust-check">✓</span><span class="trust-text"><strong>No per-lead charges</strong> — flat fee only</span></div>
+    <div class="trust-item"><span class="trust-check">✓</span><span class="trust-text"><strong>16,000 monthly searches</strong> — high-intent clients</span></div>
+    <div class="trust-item"><span class="trust-check">✓</span><span class="trust-text"><strong>No bidding wars</strong> — unlike Avvo or FindLaw</span></div>
+    <div class="trust-item"><span class="trust-check">✓</span><span class="trust-text"><strong>Verified badge</strong> — instant trust signal</span></div>
+    <div class="trust-item"><span class="trust-check">✓</span><span class="trust-text"><strong>Google Reviews</strong> displayed on your profile</span></div>
+    <div class="trust-item"><span class="trust-check">✓</span><span class="trust-text"><strong>From $25/month</strong> — billed annually</span></div>
+    <div class="trust-item"><span class="trust-check">✓</span><span class="trust-text"><strong>DA 66</strong> — profiles rank in Google</span></div>
+    <div class="trust-item"><span class="trust-check">✓</span><span class="trust-text"><strong>No per-lead charges</strong> — flat fee only</span></div>
+    <div class="trust-item"><span class="trust-check">✓</span><span class="trust-text"><strong>16,000 monthly searches</strong> — high-intent clients</span></div>
+    <div class="trust-item"><span class="trust-check">✓</span><span class="trust-text"><strong>No bidding wars</strong> — unlike Avvo or FindLaw</span></div>
+    <div class="trust-item"><span class="trust-check">✓</span><span class="trust-text"><strong>Verified badge</strong> — instant trust signal</span></div>
+    <div class="trust-item"><span class="trust-check">✓</span><span class="trust-text"><strong>Google Reviews</strong> displayed on your profile</span></div>
+    <div class="trust-item"><span class="trust-check">✓</span><span class="trust-text"><strong>From $25/month</strong> — billed annually</span></div>
+  </div>
+</div>
+
+<!-- ══════════ WHY THIS DIRECTORY ══════════ -->
+<section class="section why-section">
+  <div class="container">
+    <div class="container-narrow" data-aos="fade-up">
+      <span class="section-eyebrow">Why JustGreatLawyers</span>
+      <h2 class="section-title">16,000 clients search for an attorney here every month.<br/>Are you showing up?</h2>
+      <p class="section-sub">JustGreatLawyers.com is a growing attorney directory where clients come with real legal needs — not just browsing. Here's why attorneys are adding it to their marketing mix.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card" data-aos="fade-up" data-aos-delay="0">
+        <span class="why-icon">🎯</span>
+        <h3>High-intent audience</h3>
+        <p>People searching on JustGreatLawyers.com are actively looking to hire an attorney — not just browsing. They search by practice area and city, so every impression is relevant.</p>
+      </div>
+      <div class="why-card" data-aos="fade-up" data-aos-delay="100">
+        <span class="why-icon">🔍</span>
+        <h3>Google-indexed profiles</h3>
+        <p>Your profile ranks in Google search results for terms like "personal injury attorney Chicago." That means visibility even beyond the directory's own traffic.</p>
+      </div>
+      <div class="why-card" data-aos="fade-up" data-aos-delay="200">
+        <span class="why-icon">📈</span>
+        <h3>The platform is growing</h3>
+        <p>With 80,000+ profiles and growing monthly traffic, early paid members lock in prominent positions before markets become competitive — like the early days of Avvo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PROFILE SHOWCASE ══════════ -->
+<section class="section showcase-section">
+  <div class="container">
+    <div class="showcase-grid">
+      <div class="showcase-text" data-aos="fade-right">
+        <span class="section-eyebrow">What You Get</span>
+        <h2 class="section-title">A profile that actually gets calls</h2>
+        <p class="section-sub">Paid members get a fully-featured, verified profile that gives clients every reason to contact you — and no reason to scroll past.</p>
+        <ul class="showcase-list">
+          <li><span class="sc-icon">✓</span><div><span class="sc-label">Priority placement</span> — ranked above all free listings in your area</div></li>
+          <li><span class="sc-icon">✓</span><div><span class="sc-label">Verified badge</span> — signals legitimacy before they even read your bio</div></li>
+          <li><span class="sc-icon">✓</span><div><span class="sc-label">Google Reviews displayed</span> — real social proof on your profile</div></li>
+          <li><span class="sc-icon">✓</span><div><span class="sc-label">Direct contact</span> — phone, website, social media all public</div></li>
+          <li><span class="sc-icon">✓</span><div><span class="sc-label">Publish content</span> — articles, photos, videos to showcase expertise</div></li>
+          <li><span class="sc-icon">✓</span><div><span class="sc-label">DA 66 backlink</span> — SEO value that carries to your own site</div></li>
+        </ul>
+        <a href="https://www.justgreatlawyers.com/checkout/2" class="btn-hero-primary" style="margin-top:28px; display:inline-flex;">
+          Claim Featured Listing — $299/yr
+        </a>
+      </div>
+
+      <div data-aos="fade-left" data-aos-delay="100">
+        <div class="profile-card">
+          <div class="profile-top-bar">
+            <span class="profile-top-label">⭐ FEATURED — Priority Placement</span>
+            <span style="font-size:0.72rem;color:rgba(255,255,255,0.7);">#1 Result</span>
+          </div>
+          <div class="profile-body">
+            <div class="profile-head">
+              <div class="profile-avatar"></div>
+              <div>
+                <div class="profile-name">Sarah Johnson, Esq.</div>
+                <div class="profile-sub">Personal Injury · Chicago, IL</div>
+                <div class="profile-badges">
+                  <span class="pb-verified">✓ Verified</span>
+                  <span class="pb-ranked">↑ Priority Listed</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <span class="profile-stars">★★★★★</span>
+              <span class="profile-reviews">4.9 · 47 Google Reviews</span>
+            </div>
+            <div class="profile-quote">"Sarah was incredible from start to finish. Got my case settled in 3 months. Highly recommend to anyone in Chicago."</div>
+            <div class="profile-contacts">
+              <span class="pc">📞 (312) 555-0192</span>
+              <span class="pc">🌐 Website</span>
+              <span class="pc">💼 LinkedIn</span>
+            </div>
           </div>
         </div>
       </div>
@@ -1162,311 +1240,246 @@
   </div>
 </section>
 
-<!-- ═══════════ BENEFITS GRID ═══════════ -->
-<section class="section benefits-section" style="background: var(--light);">
+<!-- ══════════ BENEFITS ══════════ -->
+<section class="section benefits-section">
   <div class="container">
     <div class="container-narrow" style="text-align:center;" data-aos="fade-up">
-      <span class="section-label">Everything Included</span>
-      <h2 class="section-title">11 reasons paid members win more clients</h2>
-      <p class="section-sub" style="margin:0 auto;">Every feature is designed to make you the obvious choice when a client lands on your practice area page.</p>
+      <span class="section-eyebrow">Every Feature Included</span>
+      <h2 class="section-title">Everything that makes clients choose you</h2>
+      <p class="section-sub" style="margin:0 auto;">Paid members get the full suite — every feature designed to give you the edge when a client is choosing between attorneys.</p>
     </div>
     <div class="benefits-grid">
       <div class="benefit-card" data-aos="fade-up" data-aos-delay="0">
-        <div class="benefit-icon-wrap">🏆</div>
+        <div class="benefit-icon">🏆</div>
         <h3>Priority Search Ranking</h3>
-        <p>Your profile appears above all 80K+ free listings when clients search your practice area and location. First impressions win clients.</p>
+        <p>Appear above all free listings when clients search your practice area and city. First position gets the call.</p>
       </div>
-      <div class="benefit-card" data-aos="fade-up" data-aos-delay="60">
-        <div class="benefit-icon-wrap">✅</div>
+      <div class="benefit-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="benefit-icon">✅</div>
         <h3>Verified Attorney Badge</h3>
-        <p>A visible verification mark signals legitimacy and instantly builds trust before clients even read your bio.</p>
+        <p>A prominent verification mark builds immediate credibility before clients read a single word of your bio.</p>
       </div>
-      <div class="benefit-card" data-aos="fade-up" data-aos-delay="120">
-        <div class="benefit-icon-wrap">⭐</div>
+      <div class="benefit-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="benefit-icon">⭐</div>
         <h3>Full Google Reviews Feed</h3>
-        <p>Your real Google Reviews display directly on your profile. Social proof at the exact moment clients are deciding who to call.</p>
+        <p>Your real Google Reviews display directly on your profile — social proof exactly when clients are deciding.</p>
       </div>
       <div class="benefit-card" data-aos="fade-up" data-aos-delay="0">
-        <div class="benefit-icon-wrap">📞</div>
+        <div class="benefit-icon">📞</div>
         <h3>Direct Contact Published</h3>
-        <p>Phone number, website link, and social media are all public. Clients contact you directly — no form, no fee, no friction.</p>
+        <p>Phone, website, and social links are all public. Clients reach you directly — no middleman, no lead fee.</p>
       </div>
-      <div class="benefit-card" data-aos="fade-up" data-aos-delay="60">
-        <div class="benefit-icon-wrap">🏠</div>
+      <div class="benefit-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="benefit-icon">🏠</div>
         <h3>Homepage Featured Placement</h3>
-        <p>Paid members get rotational featured placement on the JustGreatLawyers homepage — where 16K monthly visitors land first.</p>
+        <p>Paid members get rotating placement on the homepage — where 16K monthly visitors land first.</p>
       </div>
-      <div class="benefit-card" data-aos="fade-up" data-aos-delay="120">
-        <div class="benefit-icon-wrap">🔗</div>
+      <div class="benefit-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="benefit-icon">🔗</div>
         <h3>DA 66 SEO Backlink</h3>
-        <p>Your indexed profile links back to your website from a Domain Authority 66 domain — a genuine SEO signal that helps you rank on Google independently.</p>
+        <p>Your indexed profile links to your website from a Domain Authority 66 domain — a real SEO signal.</p>
       </div>
       <div class="benefit-card" data-aos="fade-up" data-aos-delay="0">
-        <div class="benefit-icon-wrap">📝</div>
+        <div class="benefit-icon">📝</div>
         <h3>Publish Articles & Content</h3>
-        <p>Share legal articles, photos, and videos directly on your profile to showcase expertise and give clients more reasons to choose you.</p>
+        <p>Share legal articles, photos, and videos directly on your profile to establish authority and attract clients.</p>
       </div>
-      <div class="benefit-card" data-aos="fade-up" data-aos-delay="60">
-        <div class="benefit-icon-wrap">📬</div>
+      <div class="benefit-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="benefit-icon">📬</div>
         <h3>Priority Lead Delivery</h3>
-        <p>General inquiries from clients in your area come to you first, before other attorneys in your market see them.</p>
+        <p>Client inquiries from your area come to you before other attorneys in your market see them.</p>
       </div>
-      <div class="benefit-card" data-aos="fade-up" data-aos-delay="120">
-        <div class="benefit-icon-wrap">💰</div>
-        <h3>Flat Annual Fee — No Surprises</h3>
-        <p>One price. No per-lead charges. No auctions. No bidding. Pay once and let your profile work all year without a growing bill.</p>
+      <div class="benefit-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="benefit-icon">💰</div>
+        <h3>Flat Fee — No Surprises</h3>
+        <p>One annual price. No per-lead charges. No auctions. No monthly bills that grow when your market gets competitive.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ COUNTERS ═══════════ -->
-<section class="section counter-section">
+<!-- ══════════ COUNTERS ══════════ -->
+<section class="section counters-section">
   <div class="container">
     <div class="counters-grid">
       <div class="counter-item" data-aos="fade-up" data-aos-delay="0">
-        <span class="counter-number" data-target="16000" data-suffix="+">16,000+</span>
-        <div class="counter-label">Monthly High-Intent<br />Legal Searches</div>
+        <span class="counter-num" id="cnt1">16,000+</span>
+        <div class="counter-lbl">Monthly High-Intent<br/>Legal Searches</div>
       </div>
-      <div class="counter-item" data-aos="fade-up" data-aos-delay="80">
-        <span class="counter-number">66</span>
-        <div class="counter-label">Domain Authority<br />(DA Score)</div>
+      <div class="counter-item" data-aos="fade-up" data-aos-delay="100">
+        <span class="counter-num">66</span>
+        <div class="counter-lbl">Domain Authority<br/>(DA Score)</div>
       </div>
-      <div class="counter-item" data-aos="fade-up" data-aos-delay="160">
-        <span class="counter-number" data-target="80000" data-suffix="K+">80K+</span>
-        <div class="counter-label">Attorney Profiles<br />Indexed in Google</div>
+      <div class="counter-item" data-aos="fade-up" data-aos-delay="200">
+        <span class="counter-num" id="cnt2">80,000+</span>
+        <div class="counter-lbl">Attorney Profiles<br/>Indexed in Google</div>
       </div>
-      <div class="counter-item" data-aos="fade-up" data-aos-delay="240">
-        <span class="counter-number" style="color:#2AB27B;">~140</span>
-        <div class="counter-label">Paid Members Who<br />Capture All the Leads</div>
+      <div class="counter-item" data-aos="fade-up" data-aos-delay="300">
+        <span class="counter-num green">&lt;1%</span>
+        <div class="counter-lbl">Paid Members — Who<br/>Capture All the Leads</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ COMPARISON ═══════════ -->
+<!-- ══════════ COMPARISON ══════════ -->
 <section class="section comparison-section" id="compare">
   <div class="container">
     <div class="container-narrow" style="text-align:center;" data-aos="fade-up">
-      <span class="section-label">Side-by-Side</span>
+      <span class="section-eyebrow">Side-by-Side</span>
       <h2 class="section-title">JustGreatLawyers vs. the alternatives</h2>
-      <p class="section-sub" style="margin:0 auto;">You already know what Avvo and FindLaw cost. Here's what you get for a flat $299/year.</p>
+      <p class="section-sub" style="margin:0 auto;">You know what Avvo costs. Here's what you get for $299/year instead.</p>
     </div>
-    <div class="comparison-table-wrap" data-aos="fade-up" data-aos-delay="100">
-      <table class="comparison-table">
+    <div class="table-wrap" data-aos="fade-up" data-aos-delay="100">
+      <table>
         <thead>
           <tr>
             <th class="th-feature">Feature</th>
-            <th class="th-jgl">JustGreatLawyers<br /><small style="font-weight:400;opacity:0.85">Featured — $299/yr</small></th>
-            <th class="th-others">Avvo</th>
-            <th class="th-others">FindLaw</th>
+            <th class="th-jgl">JustGreatLawyers<br/><span style="font-weight:400;font-size:0.82rem;opacity:0.85;">Featured — $299/yr</span></th>
+            <th class="th-other">Avvo</th>
+            <th class="th-other">FindLaw</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td class="feature-name">Pricing model</td>
-            <td class="td-jgl"><strong style="color:#2AB27B;">Flat $299/yr</strong></td>
-            <td>Per-lead / auction</td>
-            <td>Monthly retainer</td>
-          </tr>
-          <tr>
-            <td class="feature-name">Cost per lead</td>
-            <td class="td-jgl"><strong style="color:#2AB27B;">$0 extra</strong></td>
-            <td class="cross">$50–$200+</td>
-            <td class="cross">$100–$400+</td>
-          </tr>
-          <tr>
-            <td class="feature-name">Bidding wars</td>
-            <td class="td-jgl"><strong style="color:#2AB27B;">None</strong></td>
-            <td class="cross">Yes</td>
-            <td class="cross">Yes</td>
-          </tr>
-          <tr>
-            <td class="feature-name">Priority search ranking</td>
-            <td class="td-jgl"><span class="check">✓</span></td>
-            <td class="check">✓</td>
-            <td class="check">✓</td>
-          </tr>
-          <tr>
-            <td class="feature-name">Google Reviews on profile</td>
-            <td class="td-jgl"><span class="check">✓</span></td>
-            <td class="cross">✗</td>
-            <td class="cross">✗</td>
-          </tr>
-          <tr>
-            <td class="feature-name">SEO backlink (DA 66)</td>
-            <td class="td-jgl"><span class="check">✓</span></td>
-            <td class="partial">Partial</td>
-            <td class="partial">Partial</td>
-          </tr>
-          <tr>
-            <td class="feature-name">Verified badge</td>
-            <td class="td-jgl"><span class="check">✓</span></td>
-            <td class="cross">✗</td>
-            <td class="cross">✗</td>
-          </tr>
-          <tr>
-            <td class="feature-name">Publish articles + videos</td>
-            <td class="td-jgl"><span class="check">✓</span></td>
-            <td class="partial">Limited</td>
-            <td class="cross">✗</td>
-          </tr>
-          <tr>
-            <td class="feature-name">Direct contact (phone/website)</td>
-            <td class="td-jgl"><span class="check">✓</span></td>
-            <td class="check">✓</td>
-            <td class="check">✓</td>
-          </tr>
-          <tr>
-            <td class="feature-name">Homepage featured placement</td>
-            <td class="td-jgl"><span class="check">✓</span></td>
-            <td class="cross">✗</td>
-            <td class="cross">✗</td>
-          </tr>
-          <tr>
-            <td class="feature-name">Competition per market</td>
-            <td class="td-jgl"><strong style="color:#2AB27B;">Very Low</strong></td>
-            <td class="cross">Saturated</td>
-            <td class="cross">Saturated</td>
-          </tr>
+          <tr><td class="feat">Pricing model</td><td class="jgl-col"><span class="price-good">Flat $299/yr</span></td><td>Per-lead / auction</td><td>Monthly retainer</td></tr>
+          <tr><td class="feat">Extra cost per lead</td><td class="jgl-col"><span class="price-good">$0</span></td><td class="price-bad">$50–$200+</td><td class="price-bad">$100–$400+</td></tr>
+          <tr><td class="feat">Bidding wars</td><td class="jgl-col"><span class="price-good">None</span></td><td><span class="xx">Yes</span></td><td><span class="xx">Yes</span></td></tr>
+          <tr><td class="feat">Priority search ranking</td><td class="jgl-col"><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td></tr>
+          <tr><td class="feat">Google Reviews on profile</td><td class="jgl-col"><span class="ck">✓</span></td><td><span class="xx">✗</span></td><td><span class="xx">✗</span></td></tr>
+          <tr><td class="feat">SEO backlink (DA 66)</td><td class="jgl-col"><span class="ck">✓</span></td><td class="pp">Partial</td><td class="pp">Partial</td></tr>
+          <tr><td class="feat">Verified badge</td><td class="jgl-col"><span class="ck">✓</span></td><td><span class="xx">✗</span></td><td><span class="xx">✗</span></td></tr>
+          <tr><td class="feat">Publish articles + videos</td><td class="jgl-col"><span class="ck">✓</span></td><td class="pp">Limited</td><td><span class="xx">✗</span></td></tr>
+          <tr><td class="feat">Homepage featured placement</td><td class="jgl-col"><span class="ck">✓</span></td><td><span class="xx">✗</span></td><td><span class="xx">✗</span></td></tr>
+          <tr><td class="feat">Competition per city</td><td class="jgl-col"><span class="price-good">Very Low</span></td><td class="price-bad">Saturated</td><td class="price-bad">Saturated</td></tr>
         </tbody>
       </table>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ PRICING ═══════════ -->
+<!-- ══════════ PRICING ══════════ -->
 <section class="section pricing-section" id="pricing">
   <div class="container">
     <div class="container-narrow" style="text-align:center;" data-aos="fade-up">
-      <span class="section-label">Simple, Transparent Pricing</span>
+      <span class="section-eyebrow">Simple Pricing</span>
       <h2 class="section-title">One flat fee. All year. Zero surprises.</h2>
-      <p class="section-sub" style="margin:0 auto;">Start free to claim your profile. Upgrade anytime to unlock priority placement and all the features that convert visitors into clients.</p>
+      <p class="section-sub" style="margin:0 auto;">Start free to claim your profile. Upgrade to unlock priority placement, verified status, and every feature that converts visitors into clients.</p>
     </div>
-    <div class="pricing-grid" data-aos="fade-up" data-aos-delay="100">
+    <div class="pricing-grid">
 
-      <!-- Basic -->
-      <div class="pricing-card">
-        <div class="pricing-tier-name">Basic</div>
-        <div class="pricing-price free-price">Free</div>
-        <div class="pricing-period">Always free</div>
-        <div style="height:28px;"></div>
-        <div class="pricing-divider"></div>
-        <ul class="pricing-features">
-          <li><span class="feat-check">✓</span> Standard profile visibility</li>
-          <li><span class="feat-check">✓</span> Searchable listing</li>
-          <li><span class="feat-check">✓</span> Up to 3 practice areas</li>
-          <li><span class="feat-dash">—</span> No verified badge</li>
-          <li><span class="feat-dash">—</span> No priority ranking</li>
-          <li><span class="feat-dash">—</span> No Google Reviews</li>
-          <li><span class="feat-dash">—</span> No direct contact info</li>
+      <div class="price-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="price-tier">Basic</div>
+        <div class="price-amount free-amt">Free</div>
+        <div class="price-period">Always free</div>
+        <div style="height:30px;"></div>
+        <div class="price-div"></div>
+        <ul class="price-feats">
+          <li><span class="pf-yes">✓</span> Standard profile visibility</li>
+          <li><span class="pf-yes">✓</span> Searchable listing</li>
+          <li><span class="pf-yes">✓</span> Up to 3 practice areas</li>
+          <li><span class="pf-no">—</span> No verified badge</li>
+          <li><span class="pf-no">—</span> No priority ranking</li>
+          <li><span class="pf-no">—</span> No Google Reviews</li>
+          <li><span class="pf-no">—</span> No direct contact info</li>
         </ul>
-        <a href="https://www.justgreatlawyers.com/checkout/3" class="btn-pricing secondary-outline">Create Free Listing</a>
+        <a href="https://www.justgreatlawyers.com/checkout/3" class="btn-plan ghost">Create Free Listing</a>
       </div>
 
-      <!-- Featured -->
-      <div class="pricing-card featured">
-        <div class="pricing-badge">Most Popular</div>
-        <div class="pricing-tier-name">Featured</div>
-        <div class="pricing-price"><span class="currency">$</span>299</div>
-        <div class="pricing-period">per year, billed annually</div>
-        <div class="pricing-per-month">Just $24.92/month</div>
-        <div class="pricing-divider"></div>
-        <ul class="pricing-features">
-          <li><span class="feat-check">✓</span> <strong>Priority visibility</strong> above all free listings</li>
-          <li><span class="feat-check">✓</span> Verified attorney badge</li>
-          <li><span class="feat-check">✓</span> Full Google Reviews displayed</li>
-          <li><span class="feat-check">✓</span> Direct phone, website & 3 social links</li>
-          <li><span class="feat-check">✓</span> Homepage featured placement</li>
-          <li><span class="feat-check">✓</span> Up to 10 practice areas</li>
-          <li><span class="feat-check">✓</span> Publish up to 3 articles</li>
-          <li><span class="feat-check">✓</span> 1 photo album</li>
-          <li><span class="feat-check">✓</span> General inquiry leads</li>
-          <li><span class="feat-check">✓</span> Respond to reviews</li>
+      <div class="price-card pop" data-aos="fade-up" data-aos-delay="100">
+        <div class="pop-label">Most Popular</div>
+        <div class="price-tier">Featured</div>
+        <div class="price-amount"><span class="curr">$</span><span class="num">299</span></div>
+        <div class="price-period">per year, billed annually</div>
+        <div class="price-monthly">Just $24.92/month</div>
+        <div class="price-div"></div>
+        <ul class="price-feats">
+          <li><span class="pf-yes">✓</span> <strong>Priority visibility</strong> above free listings</li>
+          <li><span class="pf-yes">✓</span> Verified attorney badge</li>
+          <li><span class="pf-yes">✓</span> Full Google Reviews displayed</li>
+          <li><span class="pf-yes">✓</span> Direct phone, website, 3 social links</li>
+          <li><span class="pf-yes">✓</span> Homepage featured placement</li>
+          <li><span class="pf-yes">✓</span> Up to 10 practice areas</li>
+          <li><span class="pf-yes">✓</span> Publish up to 3 articles</li>
+          <li><span class="pf-yes">✓</span> 1 photo album</li>
+          <li><span class="pf-yes">✓</span> General inquiry leads</li>
         </ul>
-        <a href="https://www.justgreatlawyers.com/checkout/2" class="btn-pricing primary">Select Featured Plan →</a>
+        <a href="https://www.justgreatlawyers.com/checkout/2" class="btn-plan blue">Select Featured Plan →</a>
       </div>
 
-      <!-- Premium -->
-      <div class="pricing-card">
-        <div class="pricing-tier-name">Premium</div>
-        <div class="pricing-price"><span class="currency">$</span>499</div>
-        <div class="pricing-period">per year, billed annually</div>
-        <div class="pricing-per-month">Just $41.58/month</div>
-        <div class="pricing-divider"></div>
-        <ul class="pricing-features">
-          <li><span class="feat-check">✓</span> <strong>Maximum visibility</strong> — top of all results</li>
-          <li><span class="feat-check">✓</span> Everything in Featured, plus:</li>
-          <li><span class="feat-check">✓</span> Up to 20 practice areas</li>
-          <li><span class="feat-check">✓</span> Unlimited articles</li>
-          <li><span class="feat-check">✓</span> Unlimited photos & videos</li>
-          <li><span class="feat-check">✓</span> Up to 5 office locations</li>
-          <li><span class="feat-check">✓</span> 7 social links</li>
-          <li><span class="feat-check">✓</span> Priority support</li>
+      <div class="price-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="price-tier">Premium</div>
+        <div class="price-amount"><span class="curr">$</span><span class="num">499</span></div>
+        <div class="price-period">per year, billed annually</div>
+        <div class="price-monthly">Just $41.58/month</div>
+        <div class="price-div"></div>
+        <ul class="price-feats">
+          <li><span class="pf-yes">✓</span> <strong>Maximum visibility</strong> — top of all results</li>
+          <li><span class="pf-yes">✓</span> Everything in Featured, plus:</li>
+          <li><span class="pf-yes">✓</span> Up to 20 practice areas</li>
+          <li><span class="pf-yes">✓</span> Unlimited articles + videos</li>
+          <li><span class="pf-yes">✓</span> Up to 5 office locations</li>
+          <li><span class="pf-yes">✓</span> 7 social links</li>
+          <li><span class="pf-yes">✓</span> Priority support</li>
         </ul>
-        <a href="https://www.justgreatlawyers.com/checkout/1" class="btn-pricing primary">Select Premium Plan →</a>
+        <a href="https://www.justgreatlawyers.com/checkout/1" class="btn-plan blue">Select Premium Plan →</a>
       </div>
-
     </div>
-    <p class="pricing-note">
-      All plans include a profile indexed in Google and linkable from your website.
-      <br />Questions? <a href="https://www.justgreatlawyers.com">Visit JustGreatLawyers.com</a>
+    <p style="text-align:center;margin-top:28px;font-size:0.83rem;color:var(--gray);">
+      All plans include a Google-indexed profile. <a href="https://www.justgreatlawyers.com" style="color:var(--blue);text-decoration:none;">Questions? Visit JustGreatLawyers.com</a>
     </p>
   </div>
 </section>
 
-<!-- ═══════════ HOW IT WORKS ═══════════ -->
+<!-- ══════════ HOW IT WORKS ══════════ -->
 <section class="section hiw-section">
   <div class="container">
     <div class="container-narrow" style="text-align:center;" data-aos="fade-up">
-      <span class="section-label">Get Started Today</span>
+      <span class="section-eyebrow">Get Started</span>
       <h2 class="section-title">Live in under 5 minutes</h2>
     </div>
-    <div class="hiw-steps">
+    <div class="hiw-grid">
       <div class="hiw-step" data-aos="fade-up" data-aos-delay="0">
-        <div class="hiw-step-number">1</div>
+        <div class="hiw-num">1</div>
         <h3>Choose your plan</h3>
-        <p>Pick Featured or Premium based on how aggressively you want to grow.</p>
+        <p>Pick Featured or Premium based on how aggressively you want to grow in your market.</p>
       </div>
       <div class="hiw-step" data-aos="fade-up" data-aos-delay="100">
-        <div class="hiw-step-number">2</div>
+        <div class="hiw-num">2</div>
         <h3>Complete checkout</h3>
-        <p>Secure payment in under 2 minutes. One flat annual fee — no surprises.</p>
+        <p>Secure payment in under 2 minutes. One flat annual fee — nothing more ever.</p>
       </div>
       <div class="hiw-step" data-aos="fade-up" data-aos-delay="200">
-        <div class="hiw-step-number">3</div>
-        <h3>Your profile goes live</h3>
-        <p>Verification badge, Google Reviews, and priority ranking activate immediately.</p>
+        <div class="hiw-num">3</div>
+        <h3>Profile goes live</h3>
+        <p>Verified badge, Google Reviews feed, and priority ranking activate immediately.</p>
       </div>
       <div class="hiw-step" data-aos="fade-up" data-aos-delay="300">
-        <div class="hiw-step-number">4</div>
-        <h3>Clients find you first</h3>
-        <p>You appear at the top of results for your practice area and location — all year.</p>
+        <div class="hiw-num">4</div>
+        <h3>Clients call you first</h3>
+        <p>You appear at the top of results for your practice area and city — all year long.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ FINAL CTA ═══════════ -->
-<section class="section final-cta">
+<!-- ══════════ FINAL CTA ══════════ -->
+<section class="section final-section">
   <div class="container">
-    <div class="final-cta-content container-narrow">
-      <div data-aos="fade-up">
-        <span class="section-label" style="color: rgba(255,255,255,0.5);">Your market is still open</span>
-        <h2>140 attorneys earn leads from 16,000 monthly searches.<br />Most of them are not in your city yet.</h2>
-        <p>This is a low-cost, zero-risk channel that runs in the background while you practice law. One flat fee. No bidding. No ongoing management.</p>
-        <div class="final-cta-buttons">
-          <a href="https://www.justgreatlawyers.com/checkout/2" class="btn-primary">
-            <span>Claim My Featured Listing — $299/yr</span>
-          </a>
-          <a href="https://www.justgreatlawyers.com/checkout/1" class="btn-secondary">View Premium Plan</a>
-        </div>
+    <div class="final-inner container-narrow" data-aos="fade-up">
+      <span class="section-eyebrow" style="color:rgba(255,255,255,0.45);">Your market is open</span>
+      <h2>Less than 1% of attorneys here are paid members.<br />Most cities still have wide-open spots.</h2>
+      <p>One flat fee. No bidding. No management overhead. This is a low-cost, passive channel that runs while you practice law.</p>
+      <div class="final-btns">
+        <a href="https://www.justgreatlawyers.com/checkout/2" class="btn-hero-primary">
+          Claim My Featured Listing — $299/yr
+        </a>
+        <a href="https://www.justgreatlawyers.com/checkout/1" class="btn-hero-ghost">View Premium Plan</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ FOOTER ═══════════ -->
+<!-- Footer -->
 <footer class="footer">
   <a href="https://www.justgreatlawyers.com" class="footer-logo">
     <img src="https://ik.imagekit.io/8nsf9m22suv/images/JustGreatLawyers_2.png" alt="JustGreatLawyers" />
@@ -1479,121 +1492,28 @@
   <div class="footer-copy">© 2025 JustGreatLawyers.com</div>
 </footer>
 
-<!-- ═══════════ SCRIPTS ═══════════ -->
+<!-- AOS + Scripts -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-  // Initialize AOS
-  AOS.init({
-    duration: 700,
-    easing: 'ease-out-cubic',
-    once: true,
-    offset: 60,
-  });
+  AOS.init({ duration: 650, easing: 'ease-out-cubic', once: true, offset: 50 });
 
-  // Register GSAP ScrollTrigger
-  gsap.registerPlugin(ScrollTrigger);
-
-  // ─── Navbar scroll ───
+  // Navbar scroll
   const navbar = document.getElementById('navbar');
+  const floatBar = document.getElementById('floatBar');
   window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 60);
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+    floatBar.classList.toggle('show', window.scrollY > 700);
   });
 
-  // ─── Cursor glow ───
-  const glow = document.getElementById('cursorGlow');
-  document.addEventListener('mousemove', e => {
-    glow.style.left = e.clientX + 'px';
-    glow.style.top = e.clientY + 'px';
-  });
-
-  // ─── Floating CTA ───
-  const floatingCta = document.getElementById('floatingCta');
-  window.addEventListener('scroll', () => {
-    floatingCta.classList.toggle('visible', window.scrollY > 600);
-  });
-
-  // ─── Hero counter animation ───
-  function animateValue(el, start, end, duration) {
-    let startTs = null;
-    const step = ts => {
-      if (!startTs) startTs = ts;
-      const progress = Math.min((ts - startTs) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
-      const current = Math.floor(eased * (end - start) + start);
-      if (end >= 1000) {
-        el.textContent = (current >= 1000 ? (current / 1000).toFixed(0) + 'K+' : current);
-      } else {
-        el.textContent = current;
-      }
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }
-
-  // Counter trigger on scroll
-  const counterSection = document.querySelector('.counter-section');
-  let countersDone = false;
-  const counterObserver = new IntersectionObserver(entries => {
-    if (entries[0].isIntersecting && !countersDone) {
-      countersDone = true;
-      document.querySelectorAll('[data-target]').forEach(el => {
-        const target = parseInt(el.dataset.target);
-        animateValue(el, 0, target, 1800);
-      });
-    }
-  }, { threshold: 0.3 });
-  if (counterSection) counterObserver.observe(counterSection);
-
-  // ─── Hero text reveal with GSAP ───
-  gsap.from('.hero-badge', { opacity: 0, y: 20, duration: 0.6, delay: 0.2 });
-  gsap.from('#heroHeadline', { opacity: 0, y: 40, duration: 0.8, delay: 0.4 });
-  gsap.from('.hero-sub', { opacity: 0, y: 30, duration: 0.7, delay: 0.65 });
-  gsap.from('.hero-cta-group', { opacity: 0, y: 24, duration: 0.6, delay: 0.85 });
-  gsap.from('.hero-stats', { opacity: 0, y: 20, duration: 0.6, delay: 1.05 });
-
-  // ─── Benefit cards stagger ───
-  gsap.from('.benefit-card', {
-    scrollTrigger: { trigger: '.benefits-grid', start: 'top 80%' },
-    opacity: 0,
-    y: 30,
-    stagger: 0.08,
-    duration: 0.6,
-    ease: 'power2.out'
-  });
-
-  // ─── Pricing cards ───
-  gsap.from('.pricing-card', {
-    scrollTrigger: { trigger: '.pricing-grid', start: 'top 80%' },
-    opacity: 0,
-    y: 40,
-    stagger: 0.12,
-    duration: 0.65,
-    ease: 'power2.out'
-  });
-
-  // ─── Comparison table rows ───
-  gsap.from('.comparison-table tbody tr', {
-    scrollTrigger: { trigger: '.comparison-table', start: 'top 80%' },
-    opacity: 0,
-    x: -20,
-    stagger: 0.05,
-    duration: 0.5,
-    ease: 'power1.out'
-  });
-
-  // ─── Smooth scroll for anchor links ───
+  // Smooth anchor scroll
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
-      const target = document.querySelector(a.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     });
   });
 </script>
-
 <!-- Google Analytics placeholder -->
 <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script> -->
-
 </body>
 </html>
