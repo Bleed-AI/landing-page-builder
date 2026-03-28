@@ -302,7 +302,7 @@
     /* ── Right: Animated Mockup ── */
     .hero-visual {
       opacity: 0;
-      animation: fadeSlideIn 0.9s ease forwards 0.5s;
+      animation: fadeSlideIn 0.9s ease forwards 1.2s;
     }
     @keyframes fadeSlideIn {
       from { opacity: 0; transform: translateX(40px) rotateY(8deg); }
@@ -979,6 +979,7 @@
     @media (max-width: 1024px) {
       .hero-inner { grid-template-columns: 1fr; gap: 40px; }
       .hero-visual { order: -1; }
+      .mock-browser { max-width: 100%; }
       .mock-notifications { display: none; }
       .why-grid, .benefits-grid, .pricing-grid { grid-template-columns: repeat(2, 1fr); }
       .counters-grid { grid-template-columns: repeat(2, 1fr); }
@@ -997,8 +998,9 @@
       .hero-stats-row { gap: 0; flex-wrap: wrap; }
       .footer { flex-direction: column; text-align: center; }
       .floating-bar { flex-direction: column; text-align: center; padding: 14px 20px; }
-      .table-wrap { font-size: 0.8rem; }
+      .table-wrap { font-size: 0.8rem; overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: var(--radius); }
       th, td { padding: 10px 12px; }
+      table { min-width: 480px; }
     }
   </style>
 </head>
@@ -1048,14 +1050,12 @@
       </h1>
 
       <p class="hero-sub">
-        JustGreatLawyers.com connects high-intent legal clients with attorneys in their area.
-        Your profile is already listed — but without a paid membership, it's buried below
-        the handful of attorneys who actually get the calls.
+        JustGreatLawyers.com connects high-intent legal clients with attorneys in their area. Without a paid membership, your profile is buried below the handful of attorneys who actually get the calls.
       </p>
 
       <div class="hero-ctas">
         <a href="https://www.justgreatlawyers.com/checkout/2" class="btn-hero-primary">
-          Claim My Featured Listing
+          Get my Featured Listing
           <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
             <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
           </svg>
