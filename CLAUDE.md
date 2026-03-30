@@ -6,6 +6,11 @@ This project builds high-quality, conversion-optimized landing pages for B2B col
 
 **Business model:** Build fast during campaign on central Vercel infrastructure. After the campaign, optionally upsell the client on ownership — spin off into their own repo + Vercel with `/spin-off`.
 
+**Infrastructure:**
+- GitHub: https://github.com/Bleed-AI/landing-page-builder
+- Vercel: https://landing-page-builder-dun.vercel.app
+- Deploy: `cd` to project root and run `vercel --yes` after pushing, or `git push` once GitHub is connected in Vercel dashboard
+
 ---
 
 ## Available Tools
@@ -189,9 +194,22 @@ Run through `prompts/design-audit.md` checklist. Fix every failing item before p
 
 1. Save final HTML to `clients/[slug]/index.html`
 2. Create `clients/[slug]/assets/` if any assets are referenced
-3. Git add, commit: `"Add landing page for [company name]"`
-4. Git push (triggers Vercel auto-deploy)
-5. Vercel will deploy to: `https://[vercel-project].vercel.app/[slug]`
+3. **Add host-specific rewrites to `vercel.json`** for the client's custom domain (e.g. `join.clientdomain.com`). Add these two entries at the top of the `rewrites` array, before the generic rules:
+```json
+{
+  "source": "/",
+  "has": [{ "type": "host", "value": "join.clientdomain.com" }],
+  "destination": "/clients/[slug]/index.html"
+},
+{
+  "source": "/:path*",
+  "has": [{ "type": "host", "value": "join.clientdomain.com" }],
+  "destination": "/clients/[slug]/:path*"
+}
+```
+4. Git add, commit: `"Add landing page for [company name]"`
+5. Git push (triggers Vercel auto-deploy)
+6. Vercel will deploy to: `https://[vercel-project].vercel.app/[slug]`
 
 ### Step 9: Deliver
 
