@@ -1,5 +1,15 @@
 {
   "rewrites": [
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "join.justgreatlawyers.com" }],
+      "destination": "/clients/just-great-lawyers/index.html"
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "join.justgreatlawyers.com" }],
+      "destination": "/clients/just-great-lawyers/:path*"
+    },
     { "source": "/:client", "destination": "/clients/:client/index.html" },
     { "source": "/:client/:path*", "destination": "/clients/:client/:path*" }
   ]
