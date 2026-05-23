@@ -5,3 +5,11 @@ workspace/
 *.log
 
 .vercel
+
+
+# BleedAI lite-kit
+.claude/.first-run-complete
+.claude/local-context.md
+.archived-env/
+tmp/
+google-service-account.json
