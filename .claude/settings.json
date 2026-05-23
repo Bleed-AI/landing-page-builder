@@ -1,0 +1,23 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node scripts/first-run-check.cjs 2>&1 || true"
+          },
+          {
+            "type": "command",
+            "command": "node scripts/auto-pull.cjs 2>&1 || true"
+          },
+          {
+            "type": "command",
+            "command": "node bin/whoami.cjs 2>&1 || true"
+          }
+        ]
+      }
+    ]
+  }
+}

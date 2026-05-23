@@ -1,0 +1,30 @@
+{
+  "_doc": "Team roster for whoami + onboarding + permission-scope flows. Add a teammate here AFTER they've been added to the Bleed-AI GitHub org. Maintain `email` exactly matching their `git config user.email` for whoami detection.",
+  "owners": [
+    {
+      "name": "Taha",
+      "email": "bleedaigeneral@gmail.com",
+      "github": "Taha-Anwar01",
+      "role": "owner"
+    }
+  ],
+  "teammates": [
+    {
+      "_example": "Replace this stub when you onboard a real teammate.",
+      "name": "Example Teammate",
+      "email": "teammate@example.com",
+      "github": "their-gh-handle",
+      "role": "teammate",
+      "scope_grants": []
+    },
+    {
+      "name": "Sophiya",
+      "email": "sophiya.imran@bleedai.com",
+      "github": "SophT-dev",
+      "slack_id": "U099J5NT6AH",
+      "role": "teammate",
+      "scope_grants": [],
+      "onboarded_at": "2026-05-11"
+    }
+  ]
+}
