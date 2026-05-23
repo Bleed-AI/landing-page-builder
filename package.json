@@ -4,9 +4,15 @@
   "type": "module",
   "description": "B2B landing page builder for cold email campaigns",
   "scripts": {
-    "serve": "node scripts/serve.js"
+    "serve": "node scripts/serve.js",
+    "export-doc": "node scripts/md-to-docx.js"
   },
   "dependencies": {
     "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "docx": "^9.6.1",
+    "marked": "^17.0.5",
+    "puppeteer-core": "^24.40.0"
   }
 }

@@ -23,6 +23,7 @@ This project builds high-quality, conversion-optimized landing pages for B2B col
 - **enhance-prompt** (stitch-skills) — Optimize prompts for Stitch
 - **stitch-design** (stitch-skills) — Prompt enhancement + Stitch MCP call in one step
 - **design-md** (stitch-skills) — Extract design tokens from existing sites
+- **Nano Bananas** — AI image generation via Gemini API (GEMINI_API_KEY in .env). Use for generating custom illustrations, backgrounds, and section visuals.
 
 ---
 
